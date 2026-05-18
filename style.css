@@ -6,7 +6,7 @@
 
 body {
     /* Using a dark Dubai skyline placeholder to match the vibe */
-    /* background: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover; */
+
     background: url('assets/hero-2.jpg') no-repeat center center/cover;
     height: 100vh;
     font-family: 'Inter', sans-serif;
@@ -45,6 +45,7 @@ header {
 header .logo {
     position: absolute;
     left: 50%;
+    top: 10px;
     transform: translateX(-50%);
 }
 
@@ -76,17 +77,21 @@ header .logo {
 }
 
 /* Layout */
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.hero-wrap {
     flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-container-inner {
+    width: 100%;
     padding: 0 12%;
 }
 
 /* Left Content Typography */
 .content-left {
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .content-left h2 {
@@ -261,7 +266,6 @@ input::placeholder {
 
 /* Mobile Invite Button */
 .mobile-invite-btn {
-    display: none;
     margin-top: 28px;
     padding: 14px 36px;
     background: #000;
@@ -331,7 +335,7 @@ input::placeholder {
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 900px) {
-    .container {
+    .hero-container-inner {
         padding: 0 6%;
     }
 
@@ -349,6 +353,8 @@ input::placeholder {
     body {
         height: auto;
         min-height: 100vh;
+        background-size: 160%;
+        background-position: center top;
     }
 
     .hero-overlay {
@@ -371,16 +377,11 @@ input::placeholder {
         padding: 0 10px;
     }
 
-    .container {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+    .hero-container-inner {
         padding: 20px 5% 30px;
-        gap: 30px;
     }
 
     .content-left {
-        max-width: 100%;
         text-align: center;
     }
 
@@ -398,23 +399,22 @@ input::placeholder {
         max-width: 440px;
     }
 
-    .content-right {
-        display: none;
-    }
-
     .mobile-invite-btn {
-        display: block;
         margin-left: auto;
         margin-right: auto;
     }
 
     .header-logo {
         height: 60px;
-        width: auto;
     }
 }
 
 @media (max-width: 480px) {
+    body {
+        background-size: 260%;
+        background-position: center top;
+    }
+
     .logo h1 {
         font-size: 1.6rem;
         letter-spacing: 3px;
@@ -548,8 +548,6 @@ input::placeholder {
 
 /* Grid — border-table technique: no double lines */
 .why-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
     border-top: 1px solid #2a2a2a;
     border-left: 1px solid #2a2a2a;
     overflow: visible;
@@ -608,32 +606,33 @@ input::placeholder {
 
 .why-card-title {
     font-family: 'Inter', sans-serif;
-    font-size: clamp(0.6rem, 0.85vw, 0.74rem);
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
     font-weight: 600;
     letter-spacing: 2.5px;
     color: #d1ad54;
     text-transform: uppercase;
     line-height: 1.8;
+    margin-bottom: 10px;
 }
 
-@media (max-width: 900px) {
-    .why-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.why-card-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #a0896a;
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+    margin: 0;
 }
 
 @media (max-width: 480px) {
-    .why-cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .why-card {
         padding: 38px 30px;
     }
 
     .why-card-title {
-        font-size: 0.7rem;
-        letter-spacing: 2px;
+        /* font-size: 0.7rem; */
+        /* letter-spacing: 2px; */
     }
 
     .why-card-icon {
@@ -655,15 +654,11 @@ input::placeholder {
 }
 
 .footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
     margin-bottom: 32px;
 }
 
 .footer-col {
-    flex: 1;
+    padding: 0;
 }
 
 .footer-heading {
@@ -780,11 +775,6 @@ input::placeholder {
 }
 
 @media (max-width: 768px) {
-    .footer-top {
-        flex-direction: column;
-        gap: 28px;
-    }
-
     .footer-inner {
         padding: 0 6%;
     }
