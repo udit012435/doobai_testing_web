@@ -259,6 +259,76 @@ input::placeholder {
 }
 
 
+/* Mobile Invite Button */
+.mobile-invite-btn {
+    display: none;
+    margin-top: 28px;
+    padding: 14px 36px;
+    background: #000;
+    border: 2px solid #d1ad54;
+    color: #d1ad54;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.mobile-invite-btn:hover {
+    background: #1a1a1a;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 30px 16px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+}
+
+.modal-close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 34px;
+    height: 34px;
+    background: #000;
+    border: 2px solid #d1ad54;
+    color: #d1ad54;
+    font-size: 1.3rem;
+    line-height: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.modal-close:hover {
+    background: #1a1a1a;
+}
+
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 900px) {
     .container {
@@ -304,6 +374,7 @@ input::placeholder {
     .container {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         padding: 20px 5% 30px;
         gap: 30px;
     }
@@ -325,6 +396,16 @@ input::placeholder {
     .form-outer-box {
         width: 100%;
         max-width: 440px;
+    }
+
+    .content-right {
+        display: none;
+    }
+
+    .mobile-invite-btn {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .header-logo {
@@ -386,4 +467,341 @@ input::placeholder {
         padding: 12px;
     }
 
+}
+
+
+/* ===== TAGLINE SECTION ===== */
+.tagline-section {
+    background: #000;
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.tagline-text {
+    font-family: 'Playfair Display', serif;
+    color: #d1ad54;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .tagline-section {
+        padding: 50px 6%;
+    }
+
+    .tagline-text {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tagline-text {
+        font-size: 1.15rem;
+        line-height: 1.7;
+    }
+}
+
+
+/* ===== WHY DUBAI SECTION ===== */
+.why-dubai-section {
+    background: #000;
+    padding: clamp(70px, 9vw, 130px) 0;
+}
+
+.why-dubai-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.why-dubai-heading {
+    text-align: center;
+    margin-bottom: clamp(50px, 7vw, 90px);
+}
+
+.why-label {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.65rem, 1.1vw, 0.8rem);
+    font-weight: 600;
+    letter-spacing: 8px;
+    color: #c9a84c;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+
+.why-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4.5vw, 3.8rem);
+    font-weight: 600;
+    letter-spacing: clamp(3px, 0.8vw, 6px);
+    background: linear-gradient(135deg, #c9a84c 0%, #e8c96a 50%, #d4a82f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+}
+
+/* Grid — border-table technique: no double lines */
+.why-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid #2a2a2a;
+    border-left: 1px solid #2a2a2a;
+    overflow: visible;
+}
+
+.why-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(36px, 4.5vw, 56px) clamp(16px, 2.5vw, 30px);
+    border-right: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    text-align: center;
+    position: relative;
+    background: #000;
+    z-index: 0;
+    transition: transform 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
+    cursor: default;
+}
+
+.why-card:hover {
+    transform: translateY(-8px);
+    background: #0d0d0d;
+    box-shadow:
+        0 18px 55px rgba(201, 168, 76, 0.18),
+        0 4px 16px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(201, 168, 76, 0.4);
+    z-index: 2;
+}
+
+.why-card-icon {
+    font-size: clamp(1.5rem, 2.2vw, 1.85rem);
+    color: #c9a84c;
+    margin-bottom: 18px;
+    line-height: 1;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.why-card:hover .why-card-icon {
+    color: #e8c96a;
+    transform: scale(1.1);
+}
+
+.why-card-line {
+    width: 28px;
+    height: 1px;
+    background: linear-gradient(to right, #c9a84c, #e8c96a, #c9a84c);
+    margin-bottom: 18px;
+    transition: width 0.35s ease;
+}
+
+.why-card:hover .why-card-line {
+    width: 44px;
+}
+
+.why-card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.6rem, 0.85vw, 0.74rem);
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    color: #d1ad54;
+    text-transform: uppercase;
+    line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+    .why-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .why-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-card {
+        padding: 38px 30px;
+    }
+
+    .why-card-title {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+    }
+
+    .why-card-icon {
+        font-size: 1.6rem;
+    }
+}
+
+
+/* ===== FOOTER ===== */
+.site-footer {
+    background: #000;
+    padding: 50px 0 30px;
+}
+
+.footer-inner {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    padding: 0 8%;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 32px;
+}
+
+.footer-col {
+    flex: 1;
+}
+
+.footer-heading {
+    font-family: 'Playfair Display', serif;
+    color: #d1ad54;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer-share-label {
+    color: #d1ad54;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.footer-social a {
+    color: #d1ad54;
+    font-size: 1rem;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #d1ad54;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.footer-social a:hover {
+    background: #d1ad54;
+    color: #000;
+}
+
+.footer-col-right {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #d1ad54;
+    font-size: 1rem;
+}
+
+.footer-contact-item i {
+    font-size: 1rem;
+    color: #d1ad54;
+}
+
+.footer-contact-item a {
+    color: #d1ad54;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.footer-contact-item a:hover {
+    opacity: 0.75;
+}
+
+.footer-initiative {
+    color: #d1ad54;
+    font-size: 1rem;
+    line-height: 1.7;
+    opacity: 0.8;
+}
+
+.footer-initiative a {
+    color: #d1ad54;
+    text-decoration: underline;
+}
+
+.footer-divider {
+    height: 1px;
+    background: #d1ad54;
+    opacity: 0.25;
+    margin-bottom: 28px;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-copy {
+    color: #d1ad54;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.footer-copy sup {
+    font-size: 0.6em;
+}
+
+.footer-disclaimer {
+    color: #7e6b3b;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .footer-inner {
+        padding: 0 6%;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: 35px 0 25px;
+    }
+
+    .footer-heading {
+        font-size: 1.1rem;
+    }
+
+    .footer-social a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
 }
