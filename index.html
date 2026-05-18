@@ -25,8 +25,9 @@
         <main class="container">
 
             <div class="content-left">
-                <h2>'Skip the Agents.<br>Access Direct.'</h2>
+                <h2>'Skip the Agents.<br>Buy At 0% Brokerage.'</h2>
                 <p>Your Exclusive Bridge to Dubai's<br>Tier-1 Institutional Property Investment.</p>
+                <button class="mobile-invite-btn" id="openInviteModal">Private Invitation</button>
             </div>
 
             <div class="content-right">
@@ -57,8 +58,8 @@
                                     <input type="checkbox"> Are you a SaleBud.com client?
                                 </div>
                                 <div class="yes-no-options">
-                                    <div class="yes-text">Yes</div>
-                                    <div class="no-checkbox"><input type="checkbox"> No</div>
+                                    <label class="yes-text"><input type="radio" name="salebud-client" value="yes"> Yes</label>
+                                    <label class="no-checkbox"><input type="radio" name="salebud-client" value="no"> No</label>
                                 </div>
                             </div>
 
@@ -71,16 +72,173 @@
             </div>
         </main>
 
-        <div class="hero-social">
+        <!-- <div class="hero-social">
             <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
             <a href="#" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
-        </div>
+        </div> -->
 
     </div>
     <!-- ===== END HERO ===== -->
 
+    <!-- ===== TAGLINE SECTION ===== -->
+    <section class="tagline-section">
+        <h2 class="tagline-text">
+            We Welcome You To The World of Zero Taxation<br>
+            With 0% Commission Deals. Grow Rich By Investing<br>
+            In Dubai's Exclusive Properties By Doobai.
+        </h2>
+    </section>
+    <!-- ===== END TAGLINE ===== -->
+
+    <!-- ===== MOBILE INVITE MODAL ===== -->
+    <div class="modal-overlay" id="inviteModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeInviteModal">&times;</button>
+            <div class="form-outer-box">
+                <h3>PRIVATE INVITATION</h3>
+                <div class="form-inner-white">
+                    <form>
+                        <input type="text" placeholder="Full Name:" required>
+                        <input type="tel" placeholder="Mobile (with Country Code)" required>
+                        <input type="email" placeholder="Email:" required>
+
+                        <div class="form-grid">
+                            <div></div> <div class="top-label">5 Cr - 10 Cr</div>
+                            <div class="top-label">10 Cr - 25 ++</div>
+
+                            <div class="side-label">Investment (₹)</div>
+                            <div class="checkbox-item"><input type="checkbox"> Capital Growth</div>
+                            <div class="checkbox-item"><input type="checkbox"> Golden Visa</div>
+
+                            <div class="side-label">Primary Interest:</div>
+                            <div class="checkbox-item"><input type="checkbox"> Holiday Home</div>
+                            <div class="checkbox-item"><input type="checkbox"> Rental Yield</div>
+                        </div>
+
+                        <div class="client-row">
+                            <div class="client-question">
+                                <input type="checkbox"> Are you a SaleBud.com client?
+                            </div>
+                            <div class="yes-no-options">
+                                <label class="yes-text"><input type="radio" name="salebud-client-m" value="yes"> Yes</label>
+                                <label class="no-checkbox"><input type="radio" name="salebud-client-m" value="no"> No</label>
+                            </div>
+                        </div>
+
+                        <button type="button" class="gold-btn">Request Your Invite</button>
+                    </form>
+                </div>
+                <p class="disclaimer">*An international initiative by the Legal Experts at SaleBud.com</p>
+            </div>
+        </div>
+    </div>
+    <!-- ===== END MODAL ===== -->
+
+    <!-- ===== WHY DUBAI SECTION ===== -->
+    <section class="why-dubai-section">
+        <div class="why-dubai-inner">
+
+            <div class="why-dubai-heading">
+                <span class="why-label">WHY</span>
+                <h2 class="why-title">INVEST IN DUBAI?</h2>
+            </div>
+
+            <div class="why-cards-grid">
+
+                <div class="why-card">
+                    <div class="why-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="why-card-line"></div>
+                    <h3 class="why-card-title">Safest City<br>In The World</h3>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="why-card-line"></div>
+                    <h3 class="why-card-title">Fastest Growing<br>Economy</h3>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-card-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <div class="why-card-line"></div>
+                    <h3 class="why-card-title">High Capital<br>Appreciation</h3>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-card-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <div class="why-card-line"></div>
+                    <h3 class="why-card-title">Ease Of<br>Investment</h3>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-card-icon"><i class="fa-solid fa-key"></i></div>
+                    <div class="why-card-line"></div>
+                    <h3 class="why-card-title">Freehold<br>Ownership</h3>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-card-icon"><i class="fa-solid fa-coins"></i></div>
+                    <div class="why-card-line"></div>
+                    <h3 class="why-card-title">100% Tax Free<br>Income</h3>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-card-icon"><i class="fa-solid fa-id-card"></i></div>
+                    <div class="why-card-line"></div>
+                    <h3 class="why-card-title">Long-Term<br>Golden Visa</h3>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-card-icon"><i class="fa-solid fa-globe"></i></div>
+                    <div class="why-card-line"></div>
+                    <h3 class="why-card-title">Worldwide<br>Connectivity</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ===== END WHY DUBAI ===== -->
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <div class="footer-social">
+                        <span class="footer-share-label">Share:</span>
+                        <a href="https://www.facebook.com/share/1BrxMkYpYd/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/doobaiofficial" target="_blank" rel="noopener noreferrer nofollow" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/doobaiofficial?igsh=MXR0cTJnMnE4MWN3Yg==" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://youtube.com/@doobaiofficial?si=wJ7BF1GS12y6pjmd" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://pin.it/33sqdPijH" target="_blank" rel="noopener noreferrer nofollow" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col footer-col-right">
+                    <div class="footer-contact-item">
+                        <i class="fa-regular fa-envelope"></i>
+                        <a href="mailto:dubai@doobai.com">dubai@doobai.com</a>
+                    </div>
+                    <p class="footer-initiative">An International Initiative By The Legal<br>
+                    Experts of <a href="http://saledeed.com" target="_blank" rel="noopener">saledeed.com</a></p>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p class="footer-copy">© 2026 doobai.com<sup>™</sup> | All Rights Reserved.</p>
+                <p class="footer-disclaimer">Disclaimer Official Notice: doobai.com is a privately owned and operated investment consultation firm. We are not affiliated with, or authorized by, and are not an official arm of the Dubai Government or any federal UAE authority. This platform serves as a private channel for real estate portfolio management and a medium for direct coordination between developers and investors.</p>
+            </div>
+
+        </div>
+    </footer>
+    <!-- ===== END FOOTER ===== -->
+
+    <script src="script.js"></script>
 </body>
 </html>
