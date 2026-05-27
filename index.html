@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D.O.O.B.A.I. - Exclusive Invitation</title>
+    <title>DOOBAI - Exclusive Invitation</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
     <!-- ===== HERO SECTION ===== -->
@@ -19,8 +23,9 @@
             <img src="assets/logo.png" alt="Logo" class="header-logo img-fluid">
             <div class="logo">
                 <img src="assets/falcon.png" alt="Falcon" class="bird-icon img-fluid">
-                <h1>D.O.O.B.A.I.</h1>
-                <p>Dubai Office Of Builders And Investors</p>
+                <h1>DOOBAI</h1>
+                <!-- <p>Dubai's Office Of Builders And Investors</p> -->
+                <p>Dubai's Office Of Builders And Investors</p>
             </div>
         </header>
 
@@ -29,8 +34,14 @@
                 <div class="row gx-0 align-items-center gy-4">
 
                     <div class="col-12 col-md-7 content-left">
-                        <h2>'Skip the Agents.<br>Buy At 0% Brokerage.'</h2>
-                        <p>Your Exclusive Bridge to Dubai's<br>Tier-1 Institutional Property Investment.</p>
+                        <!-- <h2>'Skip the Agents.<br>Buy At 0% Brokerage.'</h2> -->
+                        <h2>"India's Premier Institutional Gateway To Exclusive Dubai Real Estate."</h2>
+                        <!-- <p>Your Exclusive Bridge to Dubai's<br>Tier-1 Institutional Property Investment.</p> -->
+                        <p>"Direct developer allocations, insider
+                            pricing, and zero brokerage for Indian HNIs. Fully
+                            powered by India's leading real estate network -
+                            PropertyBaap.com."
+                        </p>
                         <button class="mobile-invite-btn d-md-none" id="openInviteModal">Private Invitation</button>
                     </div>
 
@@ -44,7 +55,8 @@
                                     <input type="email" placeholder="Email:" required>
 
                                     <div class="form-grid">
-                                        <div></div> <div class="top-label">5 Cr - 10 Cr</div>
+                                        <div></div>
+                                        <div class="top-label">5 Cr - 10 Cr</div>
                                         <div class="top-label">10 Cr - 25 ++</div>
 
                                         <div class="side-label">Investment (₹)</div>
@@ -61,8 +73,10 @@
                                             <input type="checkbox"> Are you a SaleBud.com client?
                                         </div>
                                         <div class="yes-no-options">
-                                            <label class="yes-text"><input type="radio" name="salebud-client" value="yes"> Yes</label>
-                                            <label class="no-checkbox"><input type="radio" name="salebud-client" value="no"> No</label>
+                                            <label class="yes-text"><input type="radio" name="salebud-client"
+                                                    value="yes"> Yes</label>
+                                            <label class="no-checkbox"><input type="radio" name="salebud-client"
+                                                    value="no"> No</label>
                                         </div>
                                     </div>
 
@@ -94,45 +108,548 @@
     <div class="modal-overlay" id="inviteModal">
         <div class="modal-content">
             <button class="modal-close" id="closeInviteModal">&times;</button>
-            <div class="form-outer-box">
-                <h3>PRIVATE INVITATION</h3>
-                <div class="form-inner-white">
-                    <form>
-                        <input type="text" placeholder="Full Name:" required>
-                        <input type="tel" placeholder="Mobile (with Country Code)" required>
-                        <input type="email" placeholder="Email:" required>
+            <div class="form-container">
+                <div class="accent-circle accent-1"></div>
+                <div class="accent-circle accent-2"></div>
 
-                        <div class="form-grid">
-                            <div></div> <div class="top-label">5 Cr - 10 Cr</div>
-                            <div class="top-label">10 Cr - 25 ++</div>
-
-                            <div class="side-label">Investment (₹)</div>
-                            <div class="checkbox-item"><input type="checkbox"> Capital Growth</div>
-                            <div class="checkbox-item"><input type="checkbox"> Golden Visa</div>
-
-                            <div class="side-label">Primary Interest:</div>
-                            <div class="checkbox-item"><input type="checkbox"> Holiday Home</div>
-                            <div class="checkbox-item"><input type="checkbox"> Rental Yield</div>
-                        </div>
-
-                        <div class="client-row">
-                            <div class="client-question">
-                                <input type="checkbox"> Are you a SaleBud.com client?
-                            </div>
-                            <div class="yes-no-options">
-                                <label class="yes-text"><input type="radio" name="salebud-client-m" value="yes"> Yes</label>
-                                <label class="no-checkbox"><input type="radio" name="salebud-client-m" value="no"> No</label>
-                            </div>
-                        </div>
-
-                        <button type="button" class="gold-btn">Request Your Invite</button>
-                    </form>
+                <div class="form-header">
+                    <h1>PRIVATE INVITATION</h1>
+                    <p class="subtitle">Exclusive Investment Opportunity</p>
+                    <p class="form-access-note">Access is highly restricted. Only for verified Indian HNIs, corporate families, and institutional investors looking for ₹5 Crore+ allocations.</p>
                 </div>
-                <p class="disclaimer">*An international initiative by the Legal Experts at SaleBud.com</p>
+
+                <form id="investmentForm" method="post">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <div class="phone-container">
+                            <div class="country-code-wrapper">
+                                <select id="countryCode" name="countryCode" required>
+                                    <option value="+93">🇦🇫 +93</option>
+                                    <option value="+355">🇦🇱 +355</option>
+                                    <option value="+213">🇩🇿 +213</option>
+                                    <option value="+376">🇦🇩 +376</option>
+                                    <option value="+244">🇦🇴 +244</option>
+                                    <option value="+54">🇦🇷 +54</option>
+                                    <option value="+374">🇦🇲 +374</option>
+                                    <option value="+61">🇦🇺 +61</option>
+                                    <option value="+43">🇦🇹 +43</option>
+                                    <option value="+994">🇦🇿 +994</option>
+                                    <option value="+973">🇧🇭 +973</option>
+                                    <option value="+880">🇧🇩 +880</option>
+                                    <option value="+375">🇧🇾 +375</option>
+                                    <option value="+32">🇧🇪 +32</option>
+                                    <option value="+501">🇧🇿 +501</option>
+                                    <option value="+229">🇧🇯 +229</option>
+                                    <option value="+975">🇧🇹 +975</option>
+                                    <option value="+591">🇧🇴 +591</option>
+                                    <option value="+387">🇧🇦 +387</option>
+                                    <option value="+267">🇧🇼 +267</option>
+                                    <option value="+55">🇧🇷 +55</option>
+                                    <option value="+673">🇧🇳 +673</option>
+                                    <option value="+359">🇧🇬 +359</option>
+                                    <option value="+226">🇧🇫 +226</option>
+                                    <option value="+257">🇧🇮 +257</option>
+                                    <option value="+855">🇰🇭 +855</option>
+                                    <option value="+237">🇨🇲 +237</option>
+                                    <option value="+1">🇨🇦 +1</option>
+                                    <option value="+238">🇨🇻 +238</option>
+                                    <option value="+236">🇨🇫 +236</option>
+                                    <option value="+235">🇹🇩 +235</option>
+                                    <option value="+56">🇨🇱 +56</option>
+                                    <option value="+86">🇨🇳 +86</option>
+                                    <option value="+57">🇨🇴 +57</option>
+                                    <option value="+269">🇰🇲 +269</option>
+                                    <option value="+242">🇨🇬 +242</option>
+                                    <option value="+506">🇨🇷 +506</option>
+                                    <option value="+385">🇭🇷 +385</option>
+                                    <option value="+53">🇨🇺 +53</option>
+                                    <option value="+357">🇨🇾 +357</option>
+                                    <option value="+420">🇨🇿 +420</option>
+                                    <option value="+45">🇩🇰 +45</option>
+                                    <option value="+253">🇩🇯 +253</option>
+                                    <option value="+593">🇪🇨 +593</option>
+                                    <option value="+20">🇪🇬 +20</option>
+                                    <option value="+503">🇸🇻 +503</option>
+                                    <option value="+240">🇬🇶 +240</option>
+                                    <option value="+291">🇪🇷 +291</option>
+                                    <option value="+372">🇪🇪 +372</option>
+                                    <option value="+251">🇪🇹 +251</option>
+                                    <option value="+679">🇫🇯 +679</option>
+                                    <option value="+358">🇫🇮 +358</option>
+                                    <option value="+33">🇫🇷 +33</option>
+                                    <option value="+241">🇬🇦 +241</option>
+                                    <option value="+220">🇬🇲 +220</option>
+                                    <option value="+995">🇬🇪 +995</option>
+                                    <option value="+49">🇩🇪 +49</option>
+                                    <option value="+233">🇬🇭 +233</option>
+                                    <option value="+30">🇬🇷 +30</option>
+                                    <option value="+502">🇬🇹 +502</option>
+                                    <option value="+224">🇬🇳 +224</option>
+                                    <option value="+245">🇬🇼 +245</option>
+                                    <option value="+592">🇬🇾 +592</option>
+                                    <option value="+509">🇭🇹 +509</option>
+                                    <option value="+504">🇭🇳 +504</option>
+                                    <option value="+852">🇭🇰 +852</option>
+                                    <option value="+36">🇭🇺 +36</option>
+                                    <option value="+354">🇮🇸 +354</option>
+                                    <option value="+91" selected>🇮🇳 +91</option>
+                                    <option value="+62">🇮🇩 +62</option>
+                                    <option value="+98">🇮🇷 +98</option>
+                                    <option value="+964">🇮🇶 +964</option>
+                                    <option value="+353">🇮🇪 +353</option>
+                                    <option value="+972">🇮🇱 +972</option>
+                                    <option value="+39">🇮🇹 +39</option>
+                                    <option value="+81">🇯🇵 +81</option>
+                                    <option value="+962">🇯🇴 +962</option>
+                                    <option value="+7">🇰🇿 +7</option>
+                                    <option value="+254">🇰🇪 +254</option>
+                                    <option value="+965">🇰🇼 +965</option>
+                                    <option value="+996">🇰🇬 +996</option>
+                                    <option value="+856">🇱🇦 +856</option>
+                                    <option value="+371">🇱🇻 +371</option>
+                                    <option value="+961">🇱🇧 +961</option>
+                                    <option value="+266">🇱🇸 +266</option>
+                                    <option value="+231">🇱🇷 +231</option>
+                                    <option value="+218">🇱🇾 +218</option>
+                                    <option value="+423">🇱🇮 +423</option>
+                                    <option value="+370">🇱🇹 +370</option>
+                                    <option value="+352">🇱🇺 +352</option>
+                                    <option value="+853">🇲🇴 +853</option>
+                                    <option value="+389">🇲🇰 +389</option>
+                                    <option value="+261">🇲🇬 +261</option>
+                                    <option value="+265">🇲🇼 +265</option>
+                                    <option value="+60">🇲🇾 +60</option>
+                                    <option value="+960">🇲🇻 +960</option>
+                                    <option value="+223">🇲🇱 +223</option>
+                                    <option value="+356">🇲🇹 +356</option>
+                                    <option value="+222">🇲🇷 +222</option>
+                                    <option value="+230">🇲🇺 +230</option>
+                                    <option value="+52">🇲🇽 +52</option>
+                                    <option value="+373">🇲🇩 +373</option>
+                                    <option value="+377">🇲🇨 +377</option>
+                                    <option value="+976">🇲🇳 +976</option>
+                                    <option value="+382">🇲🇪 +382</option>
+                                    <option value="+212">🇲🇦 +212</option>
+                                    <option value="+258">🇲🇿 +258</option>
+                                    <option value="+95">🇲🇲 +95</option>
+                                    <option value="+264">🇳🇦 +264</option>
+                                    <option value="+977">🇳🇵 +977</option>
+                                    <option value="+31">🇳🇱 +31</option>
+                                    <option value="+64">🇳🇿 +64</option>
+                                    <option value="+505">🇳🇮 +505</option>
+                                    <option value="+227">🇳🇪 +227</option>
+                                    <option value="+234">🇳🇬 +234</option>
+                                    <option value="+850">🇰🇵 +850</option>
+                                    <option value="+47">🇳🇴 +47</option>
+                                    <option value="+968">🇴🇲 +968</option>
+                                    <option value="+92">🇵🇰 +92</option>
+                                    <option value="+970">🇵🇸 +970</option>
+                                    <option value="+507">🇵🇦 +507</option>
+                                    <option value="+675">🇵🇬 +675</option>
+                                    <option value="+595">🇵🇾 +595</option>
+                                    <option value="+51">🇵🇪 +51</option>
+                                    <option value="+63">🇵🇭 +63</option>
+                                    <option value="+48">🇵🇱 +48</option>
+                                    <option value="+351">🇵🇹 +351</option>
+                                    <option value="+974">🇶🇦 +974</option>
+                                    <option value="+40">🇷🇴 +40</option>
+                                    <option value="+7">🇷🇺 +7</option>
+                                    <option value="+250">🇷🇼 +250</option>
+                                    <option value="+966">🇸🇦 +966</option>
+                                    <option value="+221">🇸🇳 +221</option>
+                                    <option value="+381">🇷🇸 +381</option>
+                                    <option value="+248">🇸🇨 +248</option>
+                                    <option value="+232">🇸🇱 +232</option>
+                                    <option value="+65">🇸🇬 +65</option>
+                                    <option value="+421">🇸🇰 +421</option>
+                                    <option value="+386">🇸🇮 +386</option>
+                                    <option value="+252">🇸🇴 +252</option>
+                                    <option value="+27">🇿🇦 +27</option>
+                                    <option value="+82">🇰🇷 +82</option>
+                                    <option value="+211">🇸🇸 +211</option>
+                                    <option value="+34">🇪🇸 +34</option>
+                                    <option value="+94">🇱🇰 +94</option>
+                                    <option value="+249">🇸🇩 +249</option>
+                                    <option value="+597">🇸🇷 +597</option>
+                                    <option value="+46">🇸🇪 +46</option>
+                                    <option value="+41">🇨🇭 +41</option>
+                                    <option value="+963">🇸🇾 +963</option>
+                                    <option value="+886">🇹🇼 +886</option>
+                                    <option value="+992">🇹🇯 +992</option>
+                                    <option value="+255">🇹🇿 +255</option>
+                                    <option value="+66">🇹🇭 +66</option>
+                                    <option value="+228">🇹🇬 +228</option>
+                                    <option value="+676">🇹🇴 +676</option>
+                                    <option value="+216">🇹🇳 +216</option>
+                                    <option value="+90">🇹🇷 +90</option>
+                                    <option value="+993">🇹🇲 +993</option>
+                                    <option value="+256">🇺🇬 +256</option>
+                                    <option value="+380">🇺🇦 +380</option>
+                                    <option value="+971">🇦🇪 +971</option>
+                                    <option value="+44">🇬🇧 +44</option>
+                                    <option value="+1">🇺🇸 +1</option>
+                                    <option value="+598">🇺🇾 +598</option>
+                                    <option value="+998">🇺🇿 +998</option>
+                                    <option value="+678">🇻🇺 +678</option>
+                                    <option value="+58">🇻🇪 +58</option>
+                                    <option value="+84">🇻🇳 +84</option>
+                                    <option value="+967">🇾🇪 +967</option>
+                                    <option value="+260">🇿🇲 +260</option>
+                                    <option value="+263">🇿🇼 +263</option>
+                                </select>
+                            </div>
+                            <div class="phone-number-wrapper">
+                                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="investment">Investment Range</label>
+                        <select id="investment" name="investment" required>
+                            <option value="">Select your investment range</option>
+                            <option value="1.5-4.5">₹1.5 Cr – ₹4.5 Cr (Yield Focused)</option>
+                            <option value="5-15">₹5 Cr – ₹15 Cr (Golden Visa Eligible)</option>
+                            <option value="15-50">₹15 Cr – ₹50 Cr (Luxury Selection)</option>
+                            <option value="50-100+">₹50 Cr – ₹100 Cr+ (Ultra-Luxury &amp; Bespoke)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="investmentReason">Investment Purpose</label>
+                        <select id="investmentReason" name="investmentReason" required>
+                            <option value="">Select your investment purpose</option>
+                            <option value="Self Use">Self Use</option>
+                            <option value="Capital Growth">Capital Growth</option>
+                            <option value="Rental Yield">Rental Yield</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="primaryInterest">Property Interest</label>
+                        <select id="primaryInterest" name="primaryInterest" required>
+                            <option value="">Select your property interest</option>
+                            <option value="Residential">Residential (Villas, Apartments, Penthouses)</option>
+                            <option value="Commercial">Commercial (Offices, Co-Working Spaces)</option>
+                            <option value="Retail">Retail (Shops, Restaurants)</option>
+                            <option value="Hospitality">Hospitality (Hotel Rooms, Serviced Apartments)</option>
+                            <option value="Industrial">Industrial (Warehouses, Cold Storage)</option>
+                            <option value="Plots">Plots (Residential &amp; Commercial Land)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="saledeedClient">Saledeed.com Client</label>
+                        <select id="saledeedClient" name="saledeedClient" required>
+                            <option value="">Are you already a client?</option>
+                            <option value="Yes">Yes, I am a client</option>
+                            <option value="No">No, I am new</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-button" id="submitBtn">Submit Application</button>
+
+                    <div class="success-message" id="successMessage">
+                        ✓ Thank you for contacting doobai.com! We have received your interest. We will contact you shortly.
+                    </div>
+
+                    <div class="error-message" id="errorMessage">
+                        ✗ There was an error submitting your form. Please try again or contact us directly.
+                    </div>
+                </form>
             </div>
         </div>
     </div>
     <!-- ===== END MODAL ===== -->
+
+    <!-- ===== TRUST CREDENTIALS SECTION ===== -->
+    <section class="trust-section">
+        <div class="trust-inner">
+
+            <div class="trust-heading">
+                <span class="trust-label">Our Trust Credentials</span>
+                <h2 class="trust-title">Backed by India's Trusted<br>Real Estate Ecosystem</h2>
+            </div>
+
+            <div class="row g-0 trust-cards-grid">
+
+                <div class="col-12 col-md-6 trust-card">
+                    <div class="trust-card-icon"><i class="fa-solid fa-sitemap"></i></div>
+                    <div class="trust-card-line"></div>
+                    <h3 class="trust-card-title">The PropertyBaap Network</h3>
+                    <p class="trust-card-desc">Directly integrated with PropertyBaap.com, India's rising unified real estate master ecosystem. You are dealing with a transparent, live, and highly recognized digital property platform that eliminates market guesswork.</p>
+                </div>
+
+                <div class="col-12 col-md-6 trust-card">
+                    <div class="trust-card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="trust-card-line"></div>
+                    <h3 class="trust-card-title">3rd Generation Legal Advisory</h3>
+                    <p class="trust-card-desc">Backed by the 50+ years of family legacy of 31 SON Proprietorship in high-ticket liaisoning, land asset clearance, and local compliance. We understand the value of family wealth protection.</p>
+                </div>
+
+                <div class="col-12 col-md-6 trust-card">
+                    <div class="trust-card-icon"><i class="fa-solid fa-file-shield"></i></div>
+                    <div class="trust-card-line"></div>
+                    <h3 class="trust-card-title">100% LRS &amp; FEMA Compliant</h3>
+                    <p class="trust-card-desc">Complete structural handholding on RBI's Liberalised Remittance Scheme (LRS) and foreign exchange regulations. Every single rupee is routed legally, safely, and transparently from day one.</p>
+                </div>
+
+                <div class="col-12 col-md-6 trust-card">
+                    <div class="trust-card-icon"><i class="fa-solid fa-vault"></i></div>
+                    <div class="trust-card-line"></div>
+                    <h3 class="trust-card-title">Independent Escrow Verification</h3>
+                    <p class="trust-card-desc">Our in-house legal experts directly verify the developer's Dubai Land Department (DLD) status and escrow credentials before you transfer a single rupee. Complete capital protection.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ===== END TRUST CREDENTIALS ===== -->
+
+    <!-- ===== CORE BENEFITS SECTION ===== -->
+    <section class="benefits-section">
+        <div class="benefits-inner">
+
+            <div class="benefits-heading">
+                <span class="benefits-label">Core Benefits of Investing in Dubai</span>
+                <h2 class="benefits-title">Why Dubai? The Strategic Paradigm for<br>Wealth Preservation &amp; Growth</h2>
+            </div>
+
+            <div class="benefits-accordion">
+
+                <div class="benefit-item">
+                    <button class="benefit-header">
+                        <span class="benefit-number">01</span>
+                        <h3 class="benefit-title">100% Tax-Free Investment Environment</h3>
+                        <span class="benefit-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="benefit-body">
+                        <p class="benefit-desc">Dubai stands as a global financial anomaly by offering a completely tax-free sovereign shield for your hard-earned capital. Indian investors enjoy 0% income tax, 0% capital gains tax, and 0% wealth tax on all residential real estate operations. This means every single rupee generated through your property remains entirely yours, drastically accelerating your net wealth compounding compared to heavily taxed domestic or Western markets.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <button class="benefit-header">
+                        <span class="benefit-number">02</span>
+                        <h3 class="benefit-title">The Safest Country and Legal System in the World</h3>
+                        <span class="benefit-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="benefit-body">
+                        <p class="benefit-desc">Consistently ranked as the absolute peak of global safety, Dubai offers a zero-crime environment where your family and your wealth are heavily protected. For international investors, the Dubai Land Department (DLD) enforces strict escrow account regularities that legally bind developers. Your funds cannot be misused or diverted, guaranteeing that your real estate asset is delivered exactly as promised without the construction delays common in India.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <button class="benefit-header">
+                        <span class="benefit-number">03</span>
+                        <h3 class="benefit-title">World-Wide Connectivity and Strategic Crossroads</h3>
+                        <span class="benefit-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="benefit-body">
+                        <p class="benefit-desc">Positioned geographically at the direct center of the global business map, Dubai acts as a seamless transit gateway connecting India to Europe, Africa, and the Americas within a few hours. Backed by world-class aviation infrastructure like Emirates and international airports, a business mogul can manage pan-India empires while maintaining a base in Dubai. It is not just an investment location; it is the ultimate global headquarters for high-profile business families.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <button class="benefit-header">
+                        <span class="benefit-number">04</span>
+                        <h3 class="benefit-title">High Tax-Free Rental Yields (8% – 11% Net ROI)</h3>
+                        <span class="benefit-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="benefit-body">
+                        <p class="benefit-desc">While Indian residential real estate remains stagnant at low rental returns of 2% to 3%, Dubai residential assets generate an unparalleled 8% to 11% net rental income. These yields are paid out in highly liquid global frameworks, allowing you to establish a consistent, predictable, and premium monthly cash flow. When combined with the zero-tax structure, Dubai properties function as high-performance income engines that outperform traditional equity and debt instruments.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <button class="benefit-header">
+                        <span class="benefit-number">05</span>
+                        <h3 class="benefit-title">High Capital Appreciation &amp; Market Maturation</h3>
+                        <span class="benefit-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="benefit-body">
+                        <p class="benefit-desc">Driven by an explosive global influx of ultra-wealthy individuals, corporations, and institutional capital, Dubai real estate is experiencing historic asset appreciation. Buying directly into premium master-planned off-plan developments allows Indian HNIs to capture significant value growth from the first shovel in the ground to key handover. The limited availability of prime land zones ensures that your property value scales aggressively over time.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <button class="benefit-header">
+                        <span class="benefit-number">06</span>
+                        <h3 class="benefit-title">Pegged Currency Wealth Preservation (US Dollar Hedge)</h3>
+                        <span class="benefit-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="benefit-body">
+                        <p class="benefit-desc">Investing in Dubai means your wealth is immediately denominated in UAE Dirhams (AED), which is tightly and officially pegged to the United States Dollar (USD). As the Indian Rupee (INR) experiences natural historical depreciation against the dollar, your Dubai asset value automatically appreciates in INR terms. This serves as a vital macroeconomic shield, preserving your generational purchasing power against domestic currency inflation.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <button class="benefit-header">
+                        <span class="benefit-number">07</span>
+                        <h3 class="benefit-title">Long-Term 10-Year UAE Golden Visa</h3>
+                        <span class="benefit-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="benefit-body">
+                        <p class="benefit-desc">Investing in premium property unlocks the prestigious 10-year UAE Golden Visa, granting your entire family residency rights, elite global healthcare access, and world-class educational opportunities. This visa allows you to sponsor your spouse, children, and domestic staff, providing a permanent, secure secondary home base in a highly advanced nation. It offers absolute lifestyle flexibility without requiring you to give up your Indian citizenship.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <button class="benefit-header">
+                        <span class="benefit-number">08</span>
+                        <h3 class="benefit-title">Full Freehold Ownership for International Investors</h3>
+                        <span class="benefit-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="benefit-body">
+                        <p class="benefit-desc">Unlike many global real estate destinations that only offer restrictive leasehold terms to foreigners, Dubai provides absolute 100% freehold ownership rights to Indian buyers in designated premium zones. This gives you absolute legal dominion over both the structure and the land beneath it, permanently recorded in the Dubai Land Department registry. Your investment becomes a true generational asset that can be seamlessly inherited, gifted, or sold without corporate interference.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <button class="benefit-header">
+                        <span class="benefit-number">09</span>
+                        <h3 class="benefit-title">Absolute Ease of Investment and High Liquidity</h3>
+                        <span class="benefit-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="benefit-body">
+                        <p class="benefit-desc">The transactional process in Dubai is designed to be completely frictionless, allowing you to select, allocate, and purchase premium assets remotely or via a single visit. There are zero bureaucratic bottlenecks or hidden document traps, and the resale market is highly liquid, allowing rapid exit strategies if you wish to reallocate capital. Coupled with highly flexible developer structures, expanding your international portfolio is as simple as managing a digital transaction.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ===== END CORE BENEFITS ===== -->
+
+    <!-- ===== DEVELOPER ALLIANCES SECTION ===== -->
+    <section class="developers-section">
+        <div class="developers-inner">
+
+            <div class="developers-heading">
+                <span class="developers-label">Our Elite Developer Alliances</span>
+                <h2 class="developers-title">Direct Access to Dubai's<br>Master Creators</h2>
+            </div>
+
+            <div class="row g-0 developers-grid">
+
+                <div class="col-12 col-md-4 dev-card">
+                    <h3 class="dev-name">EMAAR</h3>
+                    <div class="dev-line"></div>
+                    <p class="dev-desc">The sovereign master developer behind Downtown Dubai and the Burj Khalifa.</p>
+                    <p class="dev-best"><span>Best for:</span> Ultimate capital protection and blue-chip legacy assets.</p>
+                </div>
+
+                <div class="col-12 col-md-4 dev-card">
+                    <h3 class="dev-name">MERAAS</h3>
+                    <div class="dev-line"></div>
+                    <p class="dev-desc">The curator of high-end, design-driven urban waterfronts — Bluewaters Island, City Walk.</p>
+                    <p class="dev-best"><span>Best for:</span> Sophisticated lifestyles and premium boutique capital growth.</p>
+                </div>
+
+                <div class="col-12 col-md-4 dev-card">
+                    <h3 class="dev-name">BINGHATTI</h3>
+                    <div class="dev-line"></div>
+                    <p class="dev-desc">Famous for hyper-luxury architectural marvels and global luxury partnerships — Bugatti Residences, Mercedes-Benz Places.</p>
+                    <p class="dev-best"><span>Best for:</span> High-status branding and aggressive asset appreciation.</p>
+                </div>
+
+                <div class="col-12 col-md-4 dev-card">
+                    <h3 class="dev-name">NAKHEEL</h3>
+                    <div class="dev-line"></div>
+                    <p class="dev-desc">The world-renowned beachfront pioneers who created Palm Jumeirah.</p>
+                    <p class="dev-best"><span>Best for:</span> Iconic ultra-luxury villas and elite coastal real estate.</p>
+                </div>
+
+                <div class="col-12 col-md-4 dev-card">
+                    <h3 class="dev-name">SOBHA REALTY</h3>
+                    <div class="dev-line"></div>
+                    <p class="dev-desc">Celebrated for German-standard construction and backward-integrated quality control.</p>
+                    <p class="dev-best"><span>Best for:</span> Uncompromising build-quality in premium master-planned communities.</p>
+                </div>
+
+                <div class="col-12 col-md-4 dev-card">
+                    <h3 class="dev-name">DAMAC</h3>
+                    <div class="dev-line"></div>
+                    <p class="dev-desc">The leaders in extravagant branded concepts — Cavalli, de GRISOGONO — and massive luxury villa clusters.</p>
+                    <p class="dev-best"><span>Best for:</span> Golf-course estates and luxury lifestyle assets.</p>
+                </div>
+
+                <div class="col-12 col-md-4 dev-card dev-card--last">
+                    <h3 class="dev-name">DANUBE</h3>
+                    <div class="dev-line"></div>
+                    <p class="dev-desc">The ultimate market disruptor, famous for its legendary 1% Monthly Payment Plan (0% Interest).</p>
+                    <p class="dev-best"><span>Best for:</span> Maximum rental ROI and fluid cash-flow management.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ===== END DEVELOPER ALLIANCES ===== -->
+
+    <!-- ===== PROCESS SECTION ===== -->
+    <section class="process-section">
+        <div class="process-inner">
+
+            <div class="process-heading">
+                <span class="process-label">The Seamless Process</span>
+                <h2 class="process-title">How We Execute: Your Seamless<br>Investment Journey</h2>
+            </div>
+
+            <div class="process-steps">
+
+                <div class="process-step">
+                    <div class="step-marker">
+                        <div class="step-circle"><span>01</span></div>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Elite Private Consultation</h3>
+                        <p class="step-desc">A comprehensive strategy session — in-person at our South Delhi office or via a secure video conference — to map out your budget brackets, wealth preservation targets, and location preferences.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-marker">
+                        <div class="step-circle"><span>02</span></div>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Compliance &amp; Legal Alignment</h3>
+                        <p class="step-desc">Complete structuring of your capital outflow under strict RBI LRS guidelines, handled seamlessly by our regulatory experts.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-marker">
+                        <div class="step-circle"><span>03</span></div>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Direct Priority Allocation</h3>
+                        <p class="step-desc">Direct, zero-brokerage entry into premier developer inventories, securing first-phase launch pricing and premium floor allocations before the public market.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-marker">
+                        <div class="step-circle"><span>04</span></div>
+                        <div class="step-connector"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3 class="step-title">Continuous Portfolio Management</h3>
+                        <p class="step-desc">Ongoing handholding from title registration and document signing to key handover and post-completion rental management via our active networks.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ===== END PROCESS ===== -->
 
     <!-- ===== WHY DUBAI SECTION ===== -->
     <section class="why-dubai-section">
@@ -170,7 +687,8 @@
                     <div class="why-card-icon"><i class="fa-solid fa-handshake"></i></div>
                     <div class="why-card-line"></div>
                     <h2 class="why-card-title">Ease Of<br>Investment</h2>
-                    <p class="why-card-desc">Digital registration & investor-friendly regulations make buying effortless.</p>
+                    <p class="why-card-desc">Digital registration & investor-friendly regulations make buying
+                        effortless.</p>
                 </div>
 
                 <div class="col-12 col-md-3 why-card">
@@ -210,34 +728,44 @@
     <footer class="site-footer">
         <div class="footer-inner">
 
-            <div class="row gx-0 gy-4 footer-top">
-                <div class="col-12 col-md-6 footer-col">
-                    <h4 class="footer-heading">Contact Us</h4>
-                    <div class="footer-social">
-                        <span class="footer-share-label">Share:</span>
-                        <a href="https://www.facebook.com/share/1BrxMkYpYd/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://x.com/doobaiofficial" target="_blank" rel="noopener noreferrer nofollow" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/doobaiofficial?igsh=MXR0cTJnMnE4MWN3Yg==" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://youtube.com/@doobaiofficial?si=wJ7BF1GS12y6pjmd" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://pin.it/33sqdPijH" target="_blank" rel="noopener noreferrer nofollow" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
-                    </div>
+            <div class="row gx-0 gy-5 footer-top">
+
+                <!-- Left: Brand -->
+                <div class="col-12 col-md-4 footer-brand-col">
+                    <h4 class="footer-brand-name">DOOBAI</h4>
+                    <p class="footer-brand-tagline">Dubai's Office Of Builders And Investors.</p>
+                    <p class="footer-brand-sub">A Global Luxury Initiative Powered by PropertyBaap.com &amp; 31 SON LEGACY.</p>
                 </div>
 
-                <div class="col-12 col-md-6 footer-col footer-col-right">
+                <!-- Center: Nav Links -->
+                <div class="col-12 col-md-4 footer-links-col">
+                    <nav class="footer-nav">
+                        <a href="#">Privacy Policy</a>
+                        <span class="footer-nav-sep">|</span>
+                        <a href="#">Investment Disclaimers</a>
+                        <span class="footer-nav-sep">|</span>
+                        <a href="#">RBI LRS Guide 2026</a>
+                    </nav>
+                </div>
+
+                <!-- Right: Contact -->
+                <div class="col-12 col-md-4 footer-contact-col">
                     <div class="footer-contact-item">
                         <i class="fa-regular fa-envelope"></i>
                         <a href="mailto:dubai@doobai.com">dubai@doobai.com</a>
                     </div>
-                    <p class="footer-initiative">An International Initiative By The Legal<br>
-                    Experts of <a href="http://saledeed.com" target="_blank" rel="noopener">saledeed.com</a></p>
+                    <div class="footer-contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>South Delhi, Delhi, India, 110024</span>
+                    </div>
                 </div>
+
             </div>
 
             <div class="footer-divider"></div>
 
             <div class="footer-bottom">
-                <p class="footer-copy">© 2026 doobai.com<sup>™</sup> | All Rights Reserved.</p>
-                <p class="footer-disclaimer">Disclaimer Official Notice: doobai.com is a privately owned and operated investment consultation firm. We are not affiliated with, or authorized by, and are not an official arm of the Dubai Government or any federal UAE authority. This platform serves as a private channel for real estate portfolio management and a medium for direct coordination between developers and investors.</p>
+                <p class="footer-copy">© 2026 DOOBAI. All Rights Reserved. Powered by PROPERTYBAAP Ecosystem.</p>
             </div>
 
         </div>
@@ -248,4 +776,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
