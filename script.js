@@ -1,3 +1,38 @@
+// Sticky glass header on scroll — desktop only
+(function () {
+    var header = document.querySelector('header');
+    window.addEventListener('scroll', function () {
+        if (window.innerWidth >= 768) {
+            header.classList.toggle('scrolled', window.scrollY > 80);
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+})();
+
+// Hamburger menu
+(function () {
+    var btn     = document.getElementById('hamburgerBtn');
+    var nav     = document.getElementById('mobileNav');
+    var overlay = document.getElementById('mobNavOverlay');
+    if (!btn) return;
+
+    function open()  { btn.classList.add('open'); nav.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function close() { btn.classList.remove('open'); nav.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+    btn.addEventListener('click', function () { nav.classList.contains('open') ? close() : open(); });
+    overlay.addEventListener('click', close);
+
+    document.querySelectorAll('.mob-nav-link').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            var target = document.querySelector(this.getAttribute('href'));
+            close();
+            if (target) setTimeout(function () { target.scrollIntoView({ behavior: 'smooth' }); }, 340);
+        });
+    });
+})();
+
 const modal = document.getElementById('inviteModal');
 
 document.getElementById('openInviteModal').addEventListener('click', function () {
@@ -90,6 +125,7 @@ if (investmentForm) {
             investmentReason: document.getElementById('investmentReason').value,
             primaryInterest: document.getElementById('primaryInterest').value,
             saledeedClient: document.getElementById('saledeedClient').value,
+            developer: document.getElementById('developer').value,
         };
 
         try {
@@ -137,6 +173,7 @@ if (contactForm) {
             investmentReason: document.getElementById('c-investmentReason').value,
             primaryInterest: document.getElementById('c-primaryInterest').value,
             saledeedClient: document.getElementById('c-saledeedClient').value,
+            developer: document.getElementById('c-developer').value,
         };
 
         try {
