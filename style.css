@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     /* Using a dark Dubai skyline placeholder to match the vibe */
 
@@ -16,6 +20,7 @@ body {
     height: 100vh;
     font-family: 'Inter', sans-serif;
     color: white;
+    overflow-x: hidden;
 }
 
 .hero-overlay {
@@ -474,6 +479,11 @@ input::placeholder {
     color: rgba(201, 168, 76, 0.35);
 }
 
+.contact-form-box .form-group input[type="text"]::placeholder,
+.contact-form-box .form-group input[type="tel"]::placeholder {
+    color: #a0a0a0;
+}
+
 .form-group input[type="text"]:focus,
 .form-group input[type="tel"]:focus,
 .form-group select:focus {
@@ -898,10 +908,7 @@ input::placeholder {
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.84rem, 0.95vw, 0.95rem);
     font-weight: 300;
-    background: linear-gradient(135deg, #c9a84c 0%, #e8c96a 60%, #d4a82f 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #a0a0a0;
     line-height: 1.9;
     letter-spacing: 0.2px;
     margin: 0;
@@ -1026,23 +1033,24 @@ input::placeholder {
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.82rem, 0.9vw, 0.9rem);
     font-weight: 300;
-    background: linear-gradient(135deg, #c9a84c 0%, #e8c96a 60%, #d4a82f 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #a0a0a0;
     line-height: 1.75;
     margin-bottom: 14px;
     flex: 1;
+}
+
+.dev-partner-logo {
+    display: block;
+    margin-bottom: 16px;
+    filter: invert(1) brightness(2);
+    opacity: 0.85;
 }
 
 .dev-best {
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.78rem, 0.88vw, 0.88rem);
     font-weight: 400;
-    background: linear-gradient(135deg, #c9a84c 0%, #e8c96a 60%, #d4a82f 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #a0a0a0;
     line-height: 1.6;
     margin: 0;
     padding-top: 14px;
@@ -1051,10 +1059,7 @@ input::placeholder {
 }
 
 .dev-best span {
-    background: linear-gradient(135deg, #c9a84c 0%, #e8c96a 60%, #d4a82f 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #a0a0a0;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
@@ -1193,10 +1198,7 @@ input::placeholder {
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.84rem, 0.9vw, 0.9rem);
     font-weight: 300;
-    background: linear-gradient(135deg, #c9a84c 0%, #e8c96a 60%, #d4a82f 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #a0a0a0;
     line-height: 1.85;
     margin: 0;
 }
@@ -1505,10 +1507,7 @@ input::placeholder {
     font-family: 'Inter', sans-serif;
     font-size: 0.95rem;
     font-weight: 300;
-    background: linear-gradient(135deg, #c9a84c 0%, #e8c96a 60%, #d4a82f 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #a0a0a0;
     line-height: 1.85;
     letter-spacing: 0.3px;
     margin: 0;
@@ -1522,6 +1521,154 @@ input::placeholder {
 
     .trust-card-icon {
         font-size: 1.8rem;
+    }
+}
+
+
+/* ===== SCROLL ANIMATIONS ===== */
+.anim-left {
+    opacity: 0;
+    transform: translateX(-52px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.anim-right {
+    opacity: 0;
+    transform: translateX(52px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.anim-left.in-view,
+.anim-right.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+.anim-bottom {
+    opacity: 0;
+    transform: translateY(44px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.anim-bottom.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero page-load animations */
+@keyframes heroLeft {
+    from { opacity: 0; transform: translateX(-55px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes heroRight {
+    from { opacity: 0; transform: translateX(55px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes heroUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-heading {
+    animation: heroLeft 0.75s ease 0.1s both;
+}
+.hero-subtext {
+    animation: heroRight 0.75s ease 0.35s both;
+}
+.hero-cta {
+    animation: heroUp 0.7s ease 0.6s both;
+}
+
+
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+    background: #050505;
+    padding: clamp(60px, 8vw, 100px) 0;
+    border-top: 1px solid rgba(201, 168, 76, 0.1);
+}
+
+.contact-inner {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-left {
+    text-align: center;
+}
+
+.contact-label {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+}
+
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #c9a84c 0%, #e8c96a 60%, #d4a82f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contact-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: #a0a0a0;
+    line-height: 1.8;
+    margin-bottom: 32px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.88rem;
+    color: #a0a0a0;
+}
+
+.contact-detail-item i {
+    color: var(--gold);
+    font-size: 0.9rem;
+    width: 16px;
+}
+
+.contact-detail-item a {
+    color: #a0a0a0;
+    text-decoration: none;
+}
+
+.contact-detail-item a:hover {
+    color: var(--gold);
+}
+
+.contact-right {
+    padding-left: clamp(20px, 5vw, 60px);
+}
+
+.contact-form-box {
+    background: #0a0a0a;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    border-radius: 12px;
+    padding: clamp(28px, 4vw, 44px);
+}
+
+@media (max-width: 768px) {
+    .contact-right {
+        padding-left: 0;
     }
 }
 
