@@ -21,9 +21,7 @@ html {
 }
 
 body {
-    /* Using a dark Dubai skyline placeholder to match the vibe */
-
-    background: url('assets/hero-2.jpg') no-repeat center center/cover;
+    background: #000;
     height: 100vh;
     font-family: 'Inter', sans-serif;
     color: white;
@@ -31,18 +29,42 @@ body {
 }
 
 .hero-overlay {
-    /* Dark at top (0%), transparent in the middle (20% to 80%), and dark at bottom (100%) */
+    position: relative;
+    overflow: hidden;
     background: linear-gradient(
-        to bottom, 
-        rgba(0, 0, 0, 0.85) 0%,   /* Top mein dark */
-        rgba(0, 0, 0, 0.534) 20%,     /* 20% ke baad transparent */
-        rgba(0, 0, 0, 0.511) 80%,     /* 80% tak transparent */
-        rgba(0, 0, 0, 0.9) 100%   /* Bottom mein dark */
+        to bottom,
+        rgba(0, 0, 0, 0.85) 0%,
+        rgba(0, 0, 0, 0.534) 20%,
+        rgba(0, 0, 0, 0.511) 80%,
+        rgba(0, 0, 0, 0.9) 100%
     );
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-video-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hero-video-desktop {
+        display: none;
+    }
+    .hero-video-mobile {
+        display: block;
+    }
 }
 
 /* Header & Logo */
@@ -53,19 +75,21 @@ header {
     position: relative;
 }
 
-/* Scrolled header — glass effect */
+/* Sticky navbar after hero ends */
 header.scrolled {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 900;
-    padding: 16px 5%;
-    background: rgba(5, 5, 5, 0.82);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    padding: 12px 5%;
+    background: #000;
     border-bottom: 1px solid rgba(201, 168, 76, 0.12);
-    transition: padding 0.3s ease, background 0.3s ease;
+    transition: padding 0.3s ease;
+}
+
+header.scrolled .logo {
+    display: none;
 }
 
 
@@ -110,6 +134,30 @@ header.scrolled {
 }
 .mobile-nav.open { right: 0; }
 
+.mob-nav-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 34px;
+    height: 34px;
+    background: transparent;
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    color: var(--gold);
+    font-size: 1.3rem;
+    line-height: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.mob-nav-close:hover {
+    background: rgba(201, 168, 76, 0.12);
+    border-color: var(--gold);
+}
+
 .mobile-nav ul {
     list-style: none;
     padding: 0;
@@ -145,6 +193,11 @@ header.scrolled {
 .header-logo {
     height: 80px;
     width: auto;
+}
+
+.footer-logo {
+    height: auto;
+    width: 150px;
 }
 
 /* logo div centered absolutely so it stays in the middle */
@@ -422,14 +475,14 @@ input::placeholder {
 
 .modal-close {
     position: absolute;
-    top: -14px;
-    right: -14px;
-    width: 34px;
-    height: 34px;
-    background: #000;
-    border: 2px solid #d1ad54;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid rgba(201, 168, 76, 0.4);
     color: #d1ad54;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     line-height: 1;
     border-radius: 50%;
     cursor: pointer;
@@ -437,11 +490,86 @@ input::placeholder {
     align-items: center;
     justify-content: center;
     z-index: 10;
-    transition: background 0.2s;
+    transition: background 0.2s, border-color 0.2s;
 }
 
 .modal-close:hover {
-    background: #1a1a1a;
+    background: rgba(201, 168, 76, 0.12);
+    border-color: var(--gold);
+}
+
+/* ===== POLICY MODALS ===== */
+.policy-modal {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.policy-modal-content {
+    max-width: 720px;
+    background: #0f0f0f;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    border-radius: 4px;
+    padding: 50px 44px 44px;
+}
+
+.policy-modal-title {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+}
+
+.policy-modal-date {
+    color: #666;
+    font-size: 0.8rem;
+    margin-bottom: 28px;
+}
+
+.policy-modal-body h3 {
+    color: var(--gold);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.policy-modal-body p,
+.policy-modal-body ul {
+    color: #a0a0a0;
+    font-size: 0.88rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+.policy-modal-body ul {
+    padding-left: 20px;
+}
+
+.policy-modal-body ul li {
+    margin-bottom: 4px;
+}
+
+.policy-modal-body a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.policy-modal-body a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .policy-modal-content {
+        padding: 50px 22px 30px;
+    }
+
+    .policy-modal-title {
+        font-size: 1.2rem;
+    }
 }
 
 /* ===== INVITATION FORM ===== */
@@ -451,8 +579,17 @@ input::placeholder {
     border: 1px solid rgba(201, 168, 76, 0.3);
     border-radius: 12px;
     padding: 38px 34px 32px;
-    overflow: hidden;
     box-shadow: 0 0 60px rgba(201, 168, 76, 0.07), 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Clips the decorative glows without clipping the dropdown panels */
+.accent-clip {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .accent-circle {
@@ -479,6 +616,7 @@ input::placeholder {
 
 .form-header {
     text-align: center;
+    margin-top: 24px;
     margin-bottom: 44px;
     position: relative;
     z-index: 1;
@@ -539,12 +677,17 @@ input::placeholder {
 .form-group label {
     display: block;
     font-family: 'Inter', sans-serif;
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     font-weight: 600;
-    letter-spacing: 2px;
+    letter-spacing: 2.2px;
     text-transform: uppercase;
-    color: rgba(201, 168, 76, 0.7);
-    margin-bottom: 7px;
+    color: rgba(201, 168, 76, 0.65);
+    margin-bottom: 8px;
+    transition: color 0.2s ease;
+}
+
+.form-group:focus-within label {
+    color: rgba(201, 168, 76, 0.95);
 }
 
 .form-group input[type="text"],
@@ -553,44 +696,63 @@ input::placeholder {
     width: 100%;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(201, 168, 76, 0.22);
-    border-radius: 6px;
-    padding: 10px 13px;
+    border-radius: 8px;
+    padding: 11px 14px;
     font-family: 'Inter', sans-serif;
     font-size: 0.87rem;
-    color: #a0a0a0;
+    color: #c8c8c8;
     outline: none;
-    transition: border-color 0.2s, background 0.2s;
+    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     -webkit-appearance: none;
     appearance: none;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.form-group input[type="text"]:hover,
+.form-group input[type="tel"]:hover,
+.form-group select:hover {
+    border-color: rgba(201, 168, 76, 0.45);
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .form-group select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a84c' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23c9a84c' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 13px center;
-    padding-right: 36px;
+    background-position: right 14px center;
+    padding-right: 40px;
 }
 
 .form-group input[type="text"]::placeholder,
 .form-group input[type="tel"]::placeholder {
-    color: rgba(201, 168, 76, 0.35);
+    color: rgba(201, 168, 76, 0.3);
 }
 
 .contact-form-box .form-group input[type="text"]::placeholder,
 .contact-form-box .form-group input[type="tel"]::placeholder {
-    color: #a0a0a0;
+    color: #606060;
 }
 
 .form-group input[type="text"]:focus,
 .form-group input[type="tel"]:focus,
 .form-group select:focus {
-    border-color: rgba(201, 168, 76, 0.6);
-    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(201, 168, 76, 0.75);
+    background-color: rgba(201, 168, 76, 0.05);
+    box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
 }
 
 .form-group select option {
-    background: #111;
-    color: #c9a84c;
+    background: #141414;
+    color: #d4b96a;
+    padding: 10px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.87rem;
+}
+
+.form-group select option:hover,
+.form-group select option:checked {
+    background: #1e1a10;
+    color: var(--light-gold);
 }
 
 .phone-container {
@@ -599,11 +761,206 @@ input::placeholder {
 }
 
 .country-code-wrapper {
-    flex: 0 0 128px;
+    flex: 0 0 120px;
 }
 
 .country-code-wrapper select {
     width: 100%;
+    padding-left: 10px;
+    font-size: 0.82rem;
+    letter-spacing: 0.3px;
+}
+
+/* ===== CUSTOM SELECT ===== */
+.cs-wrap {
+    position: relative;
+    width: 100%;
+}
+
+/* Lift the field above siblings while its dropdown is open
+   (form-group has z-index:1, which would otherwise trap the panel) */
+.form-group:has(.cs-wrap.open) {
+    z-index: 1000;
+}
+
+.cs-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(201, 168, 76, 0.22);
+    border-radius: 8px;
+    padding: 11px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.87rem;
+    color: #c8c8c8;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cs-trigger:hover {
+    border-color: rgba(201, 168, 76, 0.45);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.cs-wrap.open .cs-trigger {
+    border-color: rgba(201, 168, 76, 0.75);
+    background: rgba(201, 168, 76, 0.05);
+    box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+}
+
+.cs-val {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+.cs-val.cs-placeholder {
+    color: #888;
+}
+
+.cs-chevron {
+    width: 14px;
+    height: 9px;
+    flex-shrink: 0;
+    color: var(--gold);
+    transition: transform 0.25s ease;
+}
+
+.cs-wrap.open .cs-chevron {
+    transform: rotate(180deg);
+}
+
+.cs-panel {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: #222 !important;
+    border: 1px solid rgba(201, 168, 76, 0.35);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+}
+
+.cs-wrap.open .cs-panel {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0s;
+}
+
+.cs-options-plain {
+    max-height: 220px;
+    overflow-y: auto;
+    background: #222;
+}
+
+.cs-option {
+    padding: 10px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.84rem;
+    color: #c0c0c0;
+    background: #222;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cs-option:last-child { border-bottom: none; }
+
+.cs-option:hover {
+    background: rgba(201, 168, 76, 0.15) !important;
+    color: var(--light-gold);
+}
+
+.cs-option.selected {
+    color: var(--gold);
+    background: rgba(201, 168, 76, 0.1) !important;
+}
+
+/* Country code dropdown */
+.cs-country-wrap .cs-trigger {
+    font-size: 0.82rem;
+    padding-left: 10px;
+}
+
+.cs-country-wrap .cs-panel {
+    min-width: 220px;
+    right: auto;
+}
+
+.cs-country-panel-inner {
+    display: flex;
+    flex-direction: column;
+    max-height: 280px;
+    background: #222;
+}
+
+.cs-search-wrap {
+    padding: 10px 12px 8px;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+    flex-shrink: 0;
+    background: #1a1a1a;
+}
+
+.cs-search-input {
+    width: 100%;
+    background: #222;
+    border: 1px solid rgba(201, 168, 76, 0.18);
+    border-radius: 6px;
+    padding: 7px 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: #c8c8c8;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.cs-search-input::placeholder { color: #404040; }
+.cs-search-input:focus { border-color: rgba(201, 168, 76, 0.45); }
+
+.cs-options-scroll {
+    flex: 1;
+    overflow-y: auto;
+    background: #222;
+}
+
+/* Scrollbar */
+.cs-options-plain::-webkit-scrollbar,
+.cs-options-scroll::-webkit-scrollbar { width: 4px; }
+.cs-options-plain::-webkit-scrollbar-track,
+.cs-options-scroll::-webkit-scrollbar-track { background: #0a0a0a; }
+.cs-options-plain::-webkit-scrollbar-thumb,
+.cs-options-scroll::-webkit-scrollbar-thumb {
+    background: rgba(201, 168, 76, 0.3);
+    border-radius: 4px;
+}
+.cs-options-plain::-webkit-scrollbar-thumb:hover,
+.cs-options-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(201, 168, 76, 0.55);
+}
+
+/* Mobile font size */
+@media (max-width: 768px) {
+    .contact-form-box .cs-trigger,
+    .contact-form-box .cs-option { font-size: 1.2rem; }
 }
 
 .phone-number-wrapper {
@@ -735,11 +1092,15 @@ input::placeholder {
     .logo p {
         font-size: 1rem !important;
         text-align: center;
-        padding: 0 10px;
+        padding: 7px 10px;
     }
 
     .hero-container-inner {
         padding: 20px 5% 30px;
+    }
+
+    .hero-heading {
+        margin-top: 40px;
     }
 
     .content-left {
@@ -767,6 +1128,11 @@ input::placeholder {
 
     .header-logo {
         height: 60px;
+    }
+
+    .footer-logo {
+        width: 150px;
+        height: auto;
     }
 }
 
@@ -970,10 +1336,7 @@ input::placeholder {
     font-weight: 600;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    background: linear-gradient(135deg, #c9a84c 0%, #e8c96a 60%, #d4a82f 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #a0a0a0;
     flex: 1;
     line-height: 1.5;
     margin: 0;
@@ -1009,7 +1372,10 @@ input::placeholder {
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.84rem, 0.95vw, 0.95rem);
     font-weight: 300;
-    color: #a0a0a0;
+    background: linear-gradient(135deg, #c9a84c 0%, #e8c96a 60%, #d4a82f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     line-height: 1.9;
     letter-spacing: 0.2px;
     margin: 0;
@@ -1134,7 +1500,7 @@ input::placeholder {
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.82rem, 0.9vw, 0.9rem);
     font-weight: 300;
-    color: #a0a0a0;
+    color: var(--gold);
     line-height: 1.75;
     margin-bottom: 14px;
     flex: 1;
@@ -1151,7 +1517,7 @@ input::placeholder {
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.78rem, 0.88vw, 0.88rem);
     font-weight: 400;
-    color: #a0a0a0;
+    color: var(--gold);
     line-height: 1.6;
     margin: 0;
     padding-top: 14px;
@@ -1160,7 +1526,7 @@ input::placeholder {
 }
 
 .dev-best span {
-    color: #a0a0a0;
+    color: var(--gold);
     font-weight: 600;
     letter-spacing: 0.5px;
 }
@@ -1925,11 +2291,23 @@ input::placeholder {
     opacity: 0.75;
 }
 
+.footer-socials-label {
+    display: inline-block;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    color: var(--gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
 .footer-socials {
     display: flex;
     align-items: center;
     gap: 14px;
-    margin-top: 18px;
+    margin-top: 0;
+    flex-wrap: wrap;
 }
 
 .footer-socials a {
@@ -1940,7 +2318,7 @@ input::placeholder {
     height: 36px;
     border: 1px solid rgba(201, 168, 76, 0.25);
     border-radius: 50%;
-    color: #a0a0a0;
+    color: var(--gold);
     font-size: 0.9rem;
     text-decoration: none;
     transition: color 0.2s ease, border-color 0.2s ease;
