@@ -19,6 +19,16 @@
     <!-- ===== HERO SECTION ===== -->
     <div class="hero-overlay" id="home">
 
+        <!-- Desktop Video Background -->
+        <video class="hero-video hero-video-desktop" autoplay muted loop playsinline>
+            <source src="assets/video-1.mp4" type="video/mp4">
+        </video>
+
+        <!-- Mobile Video Background -->
+        <video class="hero-video hero-video-mobile" autoplay muted loop playsinline>
+            <source src="assets/video-2.mp4" type="video/mp4">
+        </video>
+
         <header>
             <img src="assets/logo.png" alt="Logo" class="header-logo img-fluid">
             <div class="logo">
@@ -33,6 +43,7 @@
         </header>
 
         <nav class="mobile-nav" id="mobileNav">
+            <button class="mob-nav-close" id="mobNavClose" aria-label="Close menu">&times;</button>
             <ul>
                 <li><a href="#home"     class="mob-nav-link">Home</a></li>
                 <li><a href="#about"    class="mob-nav-link">About Us</a></li>
@@ -53,7 +64,7 @@
                         <h2 class="hero-heading">"India's Premier Institutional Gateway To Exclusive Dubai Real Estate."</h2>
                         <!-- <p>Your Exclusive Bridge to Dubai's<br>Tier-1 Institutional Property Investment.</p> -->
                         <p class="hero-subtext">"Direct developer allocations, insider
-                            pricing, and zero brokerage for Indian HNIs. Fully
+                            pricing, and zero brokerage for Global HNIs . Fully
                             powered by India's leading real estate network -
                             PropertyBaap.com."
                         </p>
@@ -85,12 +96,12 @@
 
                                     <div class="client-row">
                                         <div class="client-question">
-                                            <input type="checkbox"> Are you a SaleBud.com client?
+                                            <input type="checkbox"> Are you a Property Baap client?
                                         </div>
                                         <div class="yes-no-options">
-                                            <label class="yes-text"><input type="radio" name="salebud-client"
+                                            <label class="yes-text"><input type="radio" name="propertybaap-client"
                                                     value="yes"> Yes</label>
-                                            <label class="no-checkbox"><input type="radio" name="salebud-client"
+                                            <label class="no-checkbox"><input type="radio" name="propertybaap-client"
                                                     value="no"> No</label>
                                         </div>
                                     </div>
@@ -98,7 +109,7 @@
                                     <button type="button" class="gold-btn">Request Your Invite</button>
                                 </form>
                             </div>
-                            <p class="disclaimer">*An international initiative by the Legal Experts at SaleBud.com</p>
+                            <p class="disclaimer">*An international initiative by the Legal Experts at Property Baap</p>
                         </div>
                     </div>
 
@@ -124,13 +135,15 @@
         <div class="modal-content">
             <button class="modal-close" id="closeInviteModal">&times;</button>
             <div class="form-container">
-                <div class="accent-circle accent-1"></div>
-                <div class="accent-circle accent-2"></div>
+                <div class="accent-clip">
+                    <div class="accent-circle accent-1"></div>
+                    <div class="accent-circle accent-2"></div>
+                </div>
 
                 <div class="form-header">
                     <h1>PRIVATE INVITATION</h1>
                     <p class="subtitle">Exclusive Investment Opportunity</p>
-                    <p class="form-access-note">Access is highly restricted. Only for verified Indian HNIs, corporate families, and institutional investors looking for ₹5 Crore+ allocations.</p>
+                    <p class="form-access-note">Access is highly restricted. Only for verified Global HNIs , corporate families, and institutional investors looking for ₹5 Crore+ allocations.</p>
                 </div>
 
                 <form id="investmentForm" method="post">
@@ -359,8 +372,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="saledeedClient">Saledeed.com Client</label>
-                        <select id="saledeedClient" name="saledeedClient" required>
+                        <label for="saledeedClient">Property BAAP Client</label>
+                        <select id="saledeedClient" name="propertybaapClient" required>
                             <option value="">Are you already a client?</option>
                             <option value="Yes">Yes, I am a client</option>
                             <option value="No">No, I am new</option>
@@ -381,7 +394,7 @@
                         </select>
                     </div>
 
-                    <button type="submit" class="submit-button" id="submitBtn">Submit Application</button>
+                    <button type="submit" class="submit-button" id="submitBtn">Submit Request</button>
 
                     <div class="success-message" id="successMessage">
                         ✓ Thank you for contacting doobai.com! We have received your interest. We will contact you shortly.
@@ -458,7 +471,7 @@
                         <span class="benefit-chevron"><i class="fa-solid fa-chevron-down"></i></span>
                     </button>
                     <div class="benefit-body">
-                        <p class="benefit-desc">Driven by an explosive global influx of ultra-wealthy individuals, corporations, and institutional capital, Dubai real estate is experiencing historic asset appreciation. Buying directly into premium master-planned off-plan developments allows Indian HNIs to capture significant value growth from the first shovel in the ground to key handover. The limited availability of prime land zones ensures that your property value scales aggressively over time.</p>
+                        <p class="benefit-desc">Driven by an explosive global influx of ultra-wealthy individuals, corporations, and institutional capital, Dubai real estate is experiencing historic asset appreciation. Buying directly into premium master-planned off-plan developments allows Global HNIs  to capture significant value growth from the first shovel in the ground to key handover. The limited availability of prime land zones ensures that your property value scales aggressively over time.</p>
                     </div>
                 </div>
 
@@ -760,9 +773,9 @@
 
                 <!-- Left: Heading -->
                 <div class="col-12 col-md-5 contact-left">
-                    <span class="contact-label">Private Investor Registration</span>
-                    <h2 class="contact-title">Request Private Consultation</h2>
-                    <p class="contact-subtitle">Access is highly restricted. Only for verified Indian HNIs, corporate families, and institutional investors looking for ₹5 Crore+ allocations.</p>
+                    <span class="contact-label">Exclusive Investment Opportunity</span>
+                    <h2 class="contact-title">PRIVATE INVITATION</h2>
+                    <p class="contact-subtitle">Access is highly restricted. Only for verified Global HNIs , corporate families, and institutional investors looking for ₹5 Crore+ allocations.</p>
                     <!-- <div class="contact-details">
                         <div class="contact-detail-item">
                             <i class="fa-regular fa-envelope"></i>
@@ -790,22 +803,178 @@
                                 <div class="phone-container">
                                     <div class="country-code-wrapper">
                                         <select id="c-countryCode" name="countryCode" required>
-                                            <option value="+91" selected>🇮🇳 +91</option>
-                                            <option value="+971">🇦🇪 +971</option>
-                                            <option value="+1">🇺🇸 +1</option>
-                                            <option value="+44">🇬🇧 +44</option>
+                                            <option value="+93">🇦🇫 +93</option>
+                                            <option value="+355">🇦🇱 +355</option>
+                                            <option value="+213">🇩🇿 +213</option>
+                                            <option value="+376">🇦🇩 +376</option>
+                                            <option value="+244">🇦🇴 +244</option>
+                                            <option value="+54">🇦🇷 +54</option>
+                                            <option value="+374">🇦🇲 +374</option>
                                             <option value="+61">🇦🇺 +61</option>
-                                            <option value="+65">🇸🇬 +65</option>
-                                            <option value="+60">🇲🇾 +60</option>
-                                            <option value="+49">🇩🇪 +49</option>
-                                            <option value="+33">🇫🇷 +33</option>
-                                            <option value="+81">🇯🇵 +81</option>
-                                            <option value="+86">🇨🇳 +86</option>
-                                            <option value="+7">🇷🇺 +7</option>
-                                            <option value="+55">🇧🇷 +55</option>
-                                            <option value="+27">🇿🇦 +27</option>
-                                            <option value="+92">🇵🇰 +92</option>
+                                            <option value="+43">🇦🇹 +43</option>
+                                            <option value="+994">🇦🇿 +994</option>
+                                            <option value="+973">🇧🇭 +973</option>
                                             <option value="+880">🇧🇩 +880</option>
+                                            <option value="+375">🇧🇾 +375</option>
+                                            <option value="+32">🇧🇪 +32</option>
+                                            <option value="+501">🇧🇿 +501</option>
+                                            <option value="+229">🇧🇯 +229</option>
+                                            <option value="+975">🇧🇹 +975</option>
+                                            <option value="+591">🇧🇴 +591</option>
+                                            <option value="+387">🇧🇦 +387</option>
+                                            <option value="+267">🇧🇼 +267</option>
+                                            <option value="+55">🇧🇷 +55</option>
+                                            <option value="+673">🇧🇳 +673</option>
+                                            <option value="+359">🇧🇬 +359</option>
+                                            <option value="+226">🇧🇫 +226</option>
+                                            <option value="+257">🇧🇮 +257</option>
+                                            <option value="+855">🇰🇭 +855</option>
+                                            <option value="+237">🇨🇲 +237</option>
+                                            <option value="+1">🇨🇦 +1</option>
+                                            <option value="+238">🇨🇻 +238</option>
+                                            <option value="+236">🇨🇫 +236</option>
+                                            <option value="+235">🇹🇩 +235</option>
+                                            <option value="+56">🇨🇱 +56</option>
+                                            <option value="+86">🇨🇳 +86</option>
+                                            <option value="+57">🇨🇴 +57</option>
+                                            <option value="+269">🇰🇲 +269</option>
+                                            <option value="+242">🇨🇬 +242</option>
+                                            <option value="+506">🇨🇷 +506</option>
+                                            <option value="+385">🇭🇷 +385</option>
+                                            <option value="+53">🇨🇺 +53</option>
+                                            <option value="+357">🇨🇾 +357</option>
+                                            <option value="+420">🇨🇿 +420</option>
+                                            <option value="+45">🇩🇰 +45</option>
+                                            <option value="+253">🇩🇯 +253</option>
+                                            <option value="+593">🇪🇨 +593</option>
+                                            <option value="+20">🇪🇬 +20</option>
+                                            <option value="+503">🇸🇻 +503</option>
+                                            <option value="+240">🇬🇶 +240</option>
+                                            <option value="+291">🇪🇷 +291</option>
+                                            <option value="+372">🇪🇪 +372</option>
+                                            <option value="+251">🇪🇹 +251</option>
+                                            <option value="+679">🇫🇯 +679</option>
+                                            <option value="+358">🇫🇮 +358</option>
+                                            <option value="+33">🇫🇷 +33</option>
+                                            <option value="+241">🇬🇦 +241</option>
+                                            <option value="+220">🇬🇲 +220</option>
+                                            <option value="+995">🇬🇪 +995</option>
+                                            <option value="+49">🇩🇪 +49</option>
+                                            <option value="+233">🇬🇭 +233</option>
+                                            <option value="+30">🇬🇷 +30</option>
+                                            <option value="+502">🇬🇹 +502</option>
+                                            <option value="+224">🇬🇳 +224</option>
+                                            <option value="+245">🇬🇼 +245</option>
+                                            <option value="+592">🇬🇾 +592</option>
+                                            <option value="+509">🇭🇹 +509</option>
+                                            <option value="+504">🇭🇳 +504</option>
+                                            <option value="+852">🇭🇰 +852</option>
+                                            <option value="+36">🇭🇺 +36</option>
+                                            <option value="+354">🇮🇸 +354</option>
+                                            <option value="+91" selected>🇮🇳 +91</option>
+                                            <option value="+62">🇮🇩 +62</option>
+                                            <option value="+98">🇮🇷 +98</option>
+                                            <option value="+964">🇮🇶 +964</option>
+                                            <option value="+353">🇮🇪 +353</option>
+                                            <option value="+972">🇮🇱 +972</option>
+                                            <option value="+39">🇮🇹 +39</option>
+                                            <option value="+81">🇯🇵 +81</option>
+                                            <option value="+962">🇯🇴 +962</option>
+                                            <option value="+7">🇰🇿 +7</option>
+                                            <option value="+254">🇰🇪 +254</option>
+                                            <option value="+965">🇰🇼 +965</option>
+                                            <option value="+996">🇰🇬 +996</option>
+                                            <option value="+856">🇱🇦 +856</option>
+                                            <option value="+371">🇱🇻 +371</option>
+                                            <option value="+961">🇱🇧 +961</option>
+                                            <option value="+266">🇱🇸 +266</option>
+                                            <option value="+231">🇱🇷 +231</option>
+                                            <option value="+218">🇱🇾 +218</option>
+                                            <option value="+423">🇱🇮 +423</option>
+                                            <option value="+370">🇱🇹 +370</option>
+                                            <option value="+352">🇱🇺 +352</option>
+                                            <option value="+853">🇲🇴 +853</option>
+                                            <option value="+389">🇲🇰 +389</option>
+                                            <option value="+261">🇲🇬 +261</option>
+                                            <option value="+265">🇲🇼 +265</option>
+                                            <option value="+60">🇲🇾 +60</option>
+                                            <option value="+960">🇲🇻 +960</option>
+                                            <option value="+223">🇲🇱 +223</option>
+                                            <option value="+356">🇲🇹 +356</option>
+                                            <option value="+222">🇲🇷 +222</option>
+                                            <option value="+230">🇲🇺 +230</option>
+                                            <option value="+52">🇲🇽 +52</option>
+                                            <option value="+373">🇲🇩 +373</option>
+                                            <option value="+377">🇲🇨 +377</option>
+                                            <option value="+976">🇲🇳 +976</option>
+                                            <option value="+382">🇲🇪 +382</option>
+                                            <option value="+212">🇲🇦 +212</option>
+                                            <option value="+258">🇲🇿 +258</option>
+                                            <option value="+95">🇲🇲 +95</option>
+                                            <option value="+264">🇳🇦 +264</option>
+                                            <option value="+977">🇳🇵 +977</option>
+                                            <option value="+31">🇳🇱 +31</option>
+                                            <option value="+64">🇳🇿 +64</option>
+                                            <option value="+505">🇳🇮 +505</option>
+                                            <option value="+227">🇳🇪 +227</option>
+                                            <option value="+234">🇳🇬 +234</option>
+                                            <option value="+850">🇰🇵 +850</option>
+                                            <option value="+47">🇳🇴 +47</option>
+                                            <option value="+968">🇴🇲 +968</option>
+                                            <option value="+92">🇵🇰 +92</option>
+                                            <option value="+970">🇵🇸 +970</option>
+                                            <option value="+507">🇵🇦 +507</option>
+                                            <option value="+675">🇵🇬 +675</option>
+                                            <option value="+595">🇵🇾 +595</option>
+                                            <option value="+51">🇵🇪 +51</option>
+                                            <option value="+63">🇵🇭 +63</option>
+                                            <option value="+48">🇵🇱 +48</option>
+                                            <option value="+351">🇵🇹 +351</option>
+                                            <option value="+974">🇶🇦 +974</option>
+                                            <option value="+40">🇷🇴 +40</option>
+                                            <option value="+7">🇷🇺 +7</option>
+                                            <option value="+250">🇷🇼 +250</option>
+                                            <option value="+966">🇸🇦 +966</option>
+                                            <option value="+221">🇸🇳 +221</option>
+                                            <option value="+381">🇷🇸 +381</option>
+                                            <option value="+248">🇸🇨 +248</option>
+                                            <option value="+232">🇸🇱 +232</option>
+                                            <option value="+65">🇸🇬 +65</option>
+                                            <option value="+421">🇸🇰 +421</option>
+                                            <option value="+386">🇸🇮 +386</option>
+                                            <option value="+252">🇸🇴 +252</option>
+                                            <option value="+27">🇿🇦 +27</option>
+                                            <option value="+82">🇰🇷 +82</option>
+                                            <option value="+211">🇸🇸 +211</option>
+                                            <option value="+34">🇪🇸 +34</option>
+                                            <option value="+94">🇱🇰 +94</option>
+                                            <option value="+249">🇸🇩 +249</option>
+                                            <option value="+597">🇸🇷 +597</option>
+                                            <option value="+46">🇸🇪 +46</option>
+                                            <option value="+41">🇨🇭 +41</option>
+                                            <option value="+963">🇸🇾 +963</option>
+                                            <option value="+886">🇹🇼 +886</option>
+                                            <option value="+992">🇹🇯 +992</option>
+                                            <option value="+255">🇹🇿 +255</option>
+                                            <option value="+66">🇹🇭 +66</option>
+                                            <option value="+228">🇹🇬 +228</option>
+                                            <option value="+676">🇹🇴 +676</option>
+                                            <option value="+216">🇹🇳 +216</option>
+                                            <option value="+90">🇹🇷 +90</option>
+                                            <option value="+993">🇹🇲 +993</option>
+                                            <option value="+256">🇺🇬 +256</option>
+                                            <option value="+380">🇺🇦 +380</option>
+                                            <option value="+971">🇦🇪 +971</option>
+                                            <option value="+44">🇬🇧 +44</option>
+                                            <option value="+1">🇺🇸 +1</option>
+                                            <option value="+598">🇺🇾 +598</option>
+                                            <option value="+998">🇺🇿 +998</option>
+                                            <option value="+678">🇻🇺 +678</option>
+                                            <option value="+58">🇻🇪 +58</option>
+                                            <option value="+84">🇻🇳 +84</option>
+                                            <option value="+967">🇾🇪 +967</option>
+                                            <option value="+260">🇿🇲 +260</option>
+                                            <option value="+263">🇿🇼 +263</option>
                                         </select>
                                     </div>
                                     <div class="phone-number-wrapper">
@@ -848,8 +1017,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="c-saledeedClient">Saledeed.com Client</label>
-                                <select id="c-saledeedClient" name="saledeedClient" required>
+                                <label for="c-saledeedClient">Property BAAP Client</label>
+                                <select id="c-saledeedClient" name="propertybaapClient" required>
                                     <option value="">Are you already a client?</option>
                                     <option value="Yes">Yes, I am a client</option>
                                     <option value="No">No, I am new</option>
@@ -870,7 +1039,7 @@
                                 </select>
                             </div>
 
-                            <button type="submit" class="submit-button" id="contactSubmitBtn">Submit Application</button>
+                            <button type="submit" class="submit-button" id="contactSubmitBtn">Submit Request</button>
 
                             <div class="success-message" id="contactSuccessMessage">
                                 ✓ Thank you for contacting doobai.com! We have received your interest. We will contact you shortly.
@@ -896,20 +1065,27 @@
 
                 <!-- Left: Brand -->
                 <div class="col-12 col-md-4 footer-brand-col">
-                    <h4 class="footer-brand-name">DOOBAI</h4>
+                    <img src="assets/logo.png" alt="Logo" class="footer-logo img-fluid">
                     <p class="footer-brand-tagline">Dubai's Office Of Builders And Investors.</p>
                     <p class="footer-brand-sub">A Global Luxury Initiative Powered by PropertyBaap.com &amp; 31 SON LEGACY.</p>
-                    <p class="footer-disclaimer">Disclaimer Official Notice: doobai.com is a privately owned and operated investment consultation firm. We are not affiliated with, or authorized by, and are not official arm of the Dubai Government or any federal UAE authority. This platform serves as a private channel for real estate portfolio management and a medium for direct coordination between developers and investors.</p>
+                    <span class="footer-socials-label">Share:</span>
+                    <div class="footer-socials">
+                        <a href="https://www.instagram.com/doobaiofficial?igsh=MXR0cTJnMnE4MWN3Yg%3D%3D" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@doobaiofficial" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/doobaiofficial" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/doobaiofficial" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://in.pinterest.com/doobaiofficial/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                    </div>
                 </div>
 
                 <!-- Center: Nav Links -->
                 <div class="col-12 col-md-4 footer-links-col">
                     <nav class="footer-nav">
-                        <a href="#">Privacy Policy</a>
+                        <a href="#" id="openPrivacyModal">Privacy Policy</a>
                         <span class="footer-nav-sep">|</span>
-                        <a href="#">Investment Disclaimers</a>
-                        <span class="footer-nav-sep">|</span>
-                        <a href="#">RBI LRS Guide 2026</a>
+                        <a href="#" id="openDisclaimerModal">Investment Disclaimers</a>
+                        <!-- <span class="footer-nav-sep">|</span> -->
+                        <!-- <a href="#">RBI LRS Guide 2026</a> -->
                     </nav>
                 </div>
 
@@ -919,17 +1095,11 @@
                         <i class="fa-regular fa-envelope"></i>
                         <a href="mailto:dubai@doobai.com">dubai@doobai.com</a>
                     </div>
-                    <div class="footer-contact-item">
+                    <!-- <div class="footer-contact-item">
                         <i class="fa-solid fa-location-dot"></i>
                         <span>South Delhi, Delhi, India, 110024</span>
-                    </div>
-                    <div class="footer-socials">
-                        <a href="https://www.instagram.com/doobaiofficial?igsh=MXR0cTJnMnE4MWN3Yg%3D%3D" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@doobaiofficial" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://www.facebook.com/doobaiofficial" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://x.com/doobaiofficial" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="https://in.pinterest.com/doobaiofficial/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
-                    </div>
+                    </div> -->
+                    <p class="footer-disclaimer">Disclaimer Official Notice: doobai.com is a privately owned and operated investment consultation firm. We are not affiliated with, or authorized by, and are not official arm of the Dubai Government or any federal UAE authority. This platform serves as a private channel for real estate portfolio management and a medium for direct coordination between developers and investors.</p>
                 </div>
 
             </div>
@@ -943,6 +1113,97 @@
         </div>
     </footer>
     <!-- ===== END FOOTER ===== -->
+
+    <!-- ===== PRIVACY POLICY MODAL ===== -->
+    <div class="modal-overlay policy-modal" id="privacyModal">
+        <div class="modal-content policy-modal-content">
+            <button class="modal-close" id="closePrivacyModal">&times;</button>
+            <div class="policy-modal-body">
+                <h2 class="policy-modal-title">Privacy Policy</h2>
+                <p class="policy-modal-date">Effective Date: January 1, 2026</p>
+
+                <h3>1. Introduction</h3>
+                <p>DOOBAI ("we", "our", "us") is committed to protecting the privacy of our users and investors. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our platform or submit an investment inquiry.</p>
+
+                <h3>2. Information We Collect</h3>
+                <p>We may collect the following personal information:</p>
+                <ul>
+                    <li>Full name, email address, and mobile number</li>
+                    <li>Investment preferences and budget range</li>
+                    <li>Country of residence and nationality</li>
+                    <li>Communication records and inquiry history</li>
+                </ul>
+
+                <h3>3. How We Use Your Information</h3>
+                <p>Your information is used solely to:</p>
+                <ul>
+                    <li>Process and respond to your investment inquiries</li>
+                    <li>Connect you with verified Dubai developers and projects</li>
+                    <li>Send relevant property opportunities and market updates</li>
+                    <li>Comply with applicable legal and regulatory obligations</li>
+                </ul>
+
+                <h3>4. Data Sharing</h3>
+                <p>We do not sell or rent your personal data. Information may be shared with developer partners, legal advisors, or regulatory authorities only as necessary to facilitate your investment process or comply with applicable laws.</p>
+
+                <h3>5. Data Security</h3>
+                <p>We implement industry-standard security measures to protect your data. However, no method of transmission over the internet is 100% secure. We strive to use commercially acceptable means to protect your personal information.</p>
+
+                <h3>6. Your Rights</h3>
+                <p>You have the right to access, correct, or request deletion of your personal data at any time by contacting us at <a href="mailto:dubai@doobai.com">dubai@doobai.com</a>.</p>
+
+                <h3>7. Cookies</h3>
+                <p>Our platform may use cookies to enhance user experience. You may choose to disable cookies through your browser settings, though this may affect platform functionality.</p>
+
+                <h3>8. Contact</h3>
+                <p>For any privacy-related queries, please write to us at <a href="mailto:dubai@doobai.com">dubai@doobai.com</a>.</p>
+            </div>
+        </div>
+    </div>
+    <!-- ===== END PRIVACY POLICY MODAL ===== -->
+
+    <!-- ===== INVESTMENT DISCLAIMERS MODAL ===== -->
+    <div class="modal-overlay policy-modal" id="disclaimerModal">
+        <div class="modal-content policy-modal-content">
+            <button class="modal-close" id="closeDisclaimerModal">&times;</button>
+            <div class="policy-modal-body">
+                <h2 class="policy-modal-title">Investment Disclaimers</h2>
+                <p class="policy-modal-date">Last Updated: January 1, 2026</p>
+
+                <h3>1. Not Financial Advice</h3>
+                <p>All information provided on this platform is for general informational and consultation purposes only. Nothing on DOOBAI constitutes financial, legal, or investment advice. You should consult with a qualified financial advisor before making any investment decision.</p>
+
+                <h3>2. No Government Affiliation</h3>
+                <p>DOOBAI is a privately owned investment consultation firm. We are not affiliated with, authorized by, or an official arm of the Dubai Government, the UAE federal government, or any regulatory authority in the UAE or India.</p>
+
+                <h3>3. Investment Risks</h3>
+                <p>Real estate investments carry inherent risks including but not limited to:</p>
+                <ul>
+                    <li>Market fluctuations and property value changes</li>
+                    <li>Currency exchange rate risks for cross-border investments</li>
+                    <li>Regulatory and legal changes in the UAE or India</li>
+                    <li>Developer project delays or cancellations</li>
+                    <li>Liquidity risks associated with real estate assets</li>
+                </ul>
+
+                <h3>4. RBI & FEMA Compliance</h3>
+                <p>Indian investors are advised to ensure compliance with the Reserve Bank of India's Liberalised Remittance Scheme (LRS) and Foreign Exchange Management Act (FEMA) guidelines before remitting funds abroad for property investment. DOOBAI does not assume liability for non-compliance.</p>
+
+                <h3>5. Due Diligence</h3>
+                <p>We strongly recommend conducting independent due diligence on all projects, developers, and opportunities presented through this platform. Past performance of any developer or project does not guarantee future results.</p>
+
+                <h3>6. No Guarantee of Returns</h3>
+                <p>Any projected rental yields, ROI figures, or capital appreciation estimates shared are indicative only and are based on prevailing market conditions. Actual returns may vary significantly and are not guaranteed.</p>
+
+                <h3>7. Third-Party Links</h3>
+                <p>Our platform may reference third-party developers, websites, or services. DOOBAI is not responsible for the content, accuracy, or practices of any third-party entity.</p>
+
+                <h3>8. Contact</h3>
+                <p>For investment-related queries or clarifications, reach us at <a href="mailto:dubai@doobai.com">dubai@doobai.com</a>.</p>
+            </div>
+        </div>
+    </div>
+    <!-- ===== END INVESTMENT DISCLAIMERS MODAL ===== -->
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
