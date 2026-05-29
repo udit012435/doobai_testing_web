@@ -1,12 +1,11 @@
-// Sticky glass header on scroll — desktop only
+// Sticky navbar after hero section ends
 (function () {
     var header = document.querySelector('header');
+    var hero   = document.getElementById('home');
+
     window.addEventListener('scroll', function () {
-        if (window.innerWidth >= 768) {
-            header.classList.toggle('scrolled', window.scrollY > 80);
-        } else {
-            header.classList.remove('scrolled');
-        }
+        var heroBottom = hero ? hero.offsetHeight : window.innerHeight;
+        header.classList.toggle('scrolled', window.scrollY >= heroBottom);
     });
 })();
 
@@ -22,6 +21,9 @@
 
     btn.addEventListener('click', function () { nav.classList.contains('open') ? close() : open(); });
     overlay.addEventListener('click', close);
+
+    var closeBtn = document.getElementById('mobNavClose');
+    if (closeBtn) closeBtn.addEventListener('click', close);
 
     document.querySelectorAll('.mob-nav-link').forEach(function (link) {
         link.addEventListener('click', function (e) {
@@ -50,6 +52,42 @@ function closeModal() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
 }
+
+// Privacy Policy Modal
+const privacyModal = document.getElementById('privacyModal');
+document.getElementById('openPrivacyModal').addEventListener('click', function (e) {
+    e.preventDefault();
+    privacyModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+document.getElementById('closePrivacyModal').addEventListener('click', function () {
+    privacyModal.classList.remove('active');
+    document.body.style.overflow = '';
+});
+privacyModal.addEventListener('click', function (e) {
+    if (e.target === privacyModal) {
+        privacyModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+// Investment Disclaimers Modal
+const disclaimerModal = document.getElementById('disclaimerModal');
+document.getElementById('openDisclaimerModal').addEventListener('click', function (e) {
+    e.preventDefault();
+    disclaimerModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+});
+document.getElementById('closeDisclaimerModal').addEventListener('click', function () {
+    disclaimerModal.classList.remove('active');
+    document.body.style.overflow = '';
+});
+disclaimerModal.addEventListener('click', function (e) {
+    if (e.target === disclaimerModal) {
+        disclaimerModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
 
 // Core Benefits accordion
 document.querySelectorAll('.benefit-header').forEach(function (header) {
@@ -198,3 +236,150 @@ if (contactForm) {
         }
     });
 }
+
+// Custom Select — converts all .form-group select elements
+(function () {
+    function buildChevron() {
+        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("class", "cs-chevron");
+        svg.setAttribute("viewBox", "0 0 14 9");
+        svg.setAttribute("fill", "none");
+        var p = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        p.setAttribute("d", "M1 1l6 6 6-6");
+        p.setAttribute("stroke", "currentColor");
+        p.setAttribute("stroke-width", "1.8");
+        p.setAttribute("stroke-linecap", "round");
+        p.setAttribute("stroke-linejoin", "round");
+        svg.appendChild(p);
+        return svg;
+    }
+
+    function closeAll(except) {
+        document.querySelectorAll(".cs-wrap.open").forEach(function (w) {
+            if (w !== except) {
+                w.classList.remove("open");
+                w.querySelector(".cs-trigger").setAttribute("aria-expanded", "false");
+                var fg = w.closest(".form-group");
+                if (fg) fg.style.zIndex = "";
+            }
+        });
+    }
+
+    document.querySelectorAll(".form-group select").forEach(function (sel) {
+        var isCountry = !!sel.closest(".country-code-wrapper");
+        var placeholder = sel.querySelector("option[value=\"\"]");
+        var placeholderText = placeholder ? placeholder.textContent.trim() : "Select...";
+
+        var wrap = document.createElement("div");
+        wrap.className = "cs-wrap" + (isCountry ? " cs-country-wrap" : "");
+
+        var trigger = document.createElement("button");
+        trigger.type = "button";
+        trigger.className = "cs-trigger";
+        trigger.setAttribute("aria-haspopup", "listbox");
+        trigger.setAttribute("aria-expanded", "false");
+
+        var valEl = document.createElement("span");
+        valEl.className = "cs-val";
+        var selectedOpt = sel.querySelector("option:checked");
+        if (selectedOpt && selectedOpt.value !== "") {
+            valEl.textContent = selectedOpt.textContent.trim();
+        } else {
+            valEl.textContent = placeholderText;
+            valEl.classList.add("cs-placeholder");
+        }
+
+        trigger.appendChild(valEl);
+        trigger.appendChild(buildChevron());
+
+        var panel = document.createElement("div");
+        panel.className = "cs-panel";
+        panel.setAttribute("role", "listbox");
+
+        var optionsContainer;
+
+        if (isCountry) {
+            var inner = document.createElement("div");
+            inner.className = "cs-country-panel-inner";
+            var searchWrap = document.createElement("div");
+            searchWrap.className = "cs-search-wrap";
+            var searchInput = document.createElement("input");
+            searchInput.type = "text";
+            searchInput.className = "cs-search-input";
+            searchInput.placeholder = "Search country...";
+            searchWrap.appendChild(searchInput);
+            inner.appendChild(searchWrap);
+            optionsContainer = document.createElement("div");
+            optionsContainer.className = "cs-options-scroll";
+            inner.appendChild(optionsContainer);
+            panel.appendChild(inner);
+        } else {
+            optionsContainer = document.createElement("div");
+            optionsContainer.className = "cs-options-plain";
+            panel.appendChild(optionsContainer);
+        }
+
+        Array.from(sel.options).forEach(function (opt) {
+            if (opt.value === "") return;
+            var div = document.createElement("div");
+            div.className = "cs-option" + (opt.selected && opt.value !== "" ? " selected" : "");
+            div.dataset.value = opt.value;
+            div.setAttribute("role", "option");
+            div.textContent = opt.textContent.trim();
+            optionsContainer.appendChild(div);
+        });
+
+        wrap.appendChild(trigger);
+        wrap.appendChild(panel);
+        sel.parentNode.insertBefore(wrap, sel);
+        sel.style.display = "none";
+
+        var formGroup = wrap.closest(".form-group");
+
+        trigger.addEventListener("click", function (e) {
+            e.stopPropagation();
+            if (wrap.classList.contains("open")) {
+                wrap.classList.remove("open");
+                trigger.setAttribute("aria-expanded", "false");
+                if (formGroup) formGroup.style.zIndex = "";
+            } else {
+                closeAll(wrap);
+                wrap.classList.add("open");
+                trigger.setAttribute("aria-expanded", "true");
+                if (formGroup) formGroup.style.zIndex = "1000";
+                if (isCountry) {
+                    setTimeout(function () { panel.querySelector(".cs-search-input").focus(); }, 40);
+                }
+            }
+        });
+
+        optionsContainer.querySelectorAll(".cs-option").forEach(function (opt) {
+            opt.addEventListener("click", function (e) {
+                e.stopPropagation();
+                valEl.textContent = opt.textContent;
+                valEl.classList.remove("cs-placeholder");
+                sel.value = opt.dataset.value;
+                sel.dispatchEvent(new Event("change"));
+                optionsContainer.querySelectorAll(".cs-option").forEach(function (o) { o.classList.remove("selected"); });
+                opt.classList.add("selected");
+                wrap.classList.remove("open");
+                trigger.setAttribute("aria-expanded", "false");
+                if (formGroup) formGroup.style.zIndex = "";
+            });
+        });
+
+        if (isCountry) {
+            var si = panel.querySelector(".cs-search-input");
+            var sc = panel.querySelector(".cs-options-scroll");
+            si.addEventListener("input", function () {
+                var q = this.value.toLowerCase();
+                sc.querySelectorAll(".cs-option").forEach(function (o) {
+                    o.style.display = o.textContent.toLowerCase().includes(q) ? "" : "none";
+                });
+            });
+            si.addEventListener("click", function (e) { e.stopPropagation(); });
+        }
+    });
+
+    document.addEventListener("click", function () { closeAll(); });
+})();
