@@ -85,7 +85,13 @@ header.scrolled {
     padding: 12px 5%;
     background: #000;
     border-bottom: 1px solid rgba(201, 168, 76, 0.12);
-    transition: padding 0.3s ease;
+    transition: padding 0.3s ease, transform 0.35s ease, opacity 0.35s ease;
+}
+
+header.nav-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
 }
 
 header.scrolled .logo {
