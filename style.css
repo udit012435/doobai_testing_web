@@ -960,7 +960,7 @@ input::placeholder {
 /* Mobile font size */
 @media (max-width: 768px) {
     .contact-form-box .cs-trigger,
-    .contact-form-box .cs-option { font-size: 1.2rem; }
+    .contact-form-box .cs-option { font-size: 0.9rem; }
 }
 
 .phone-number-wrapper {
@@ -2142,7 +2142,7 @@ input::placeholder {
     .contact-form-box .form-group input,
     .contact-form-box .form-group select,
     .contact-form-box .submit-button {
-        font-size: 1.2rem;
+        font-size: 0.9rem;
     }
 }
 
