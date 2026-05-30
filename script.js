@@ -9,6 +9,21 @@
     });
 })();
 
+// Hide navbar when footer is visible
+(function () {
+    var header = document.querySelector('header');
+    var footer = document.querySelector('.site-footer');
+    if (!header || !footer) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            header.classList.toggle('nav-hidden', entry.isIntersecting);
+        });
+    }, { threshold: 0.05 });
+
+    observer.observe(footer);
+})();
+
 // Hamburger menu
 (function () {
     var btn     = document.getElementById('hamburgerBtn');
